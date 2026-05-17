@@ -1,0 +1,219 @@
+---
+import projects from '../../data/projects.json';
+
+import MainLayout from '../../layouts/MainLayout.astro';
+import Nav from '../../components/ui/Nav.astro';
+
+import '../../styles/project-detail.css';
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: {
+      slug: project.slug
+    }
+  }));
+}
+
+const { slug } = Astro.params;
+
+const project = projects.find(
+  (item) => item.slug === slug
+);
+
+if (!project) {
+  return Astro.redirect('/projects');
+}
+---
+
+<MainLayout title={project.title}>
+
+  <div class="page">
+
+    <Nav />
+
+    <!-- HERO -->
+    <header class="case-hero">
+
+      <div class="case-hero-bg">
+        {project.heroWord || 'CASE'}
+      </div>
+
+      <div class="panel-id">
+        // 01 · CASO DE ESTUDIO
+      </div>
+
+      <div class="case-hero-grid">
+
+        <!-- LEFT -->
+        <div class="case-hero-left">
+
+          <div>
+
+            <div class="case-breadcrumb">
+
+              Proyectos
+              <span>/</span>
+              {project.title}
+
+            </div>
+
+            <div class="case-num">
+              {project.year}
+            </div>
+
+            <h1 class="case-title">
+              {project.title}
+            </h1>
+
+            <p class="case-tagline">
+              {project.description}
+            </p>
+
+            <div class="case-tags">
+
+              {
+                project.stack.map((item) => (
+                  <span class="tag">
+                    {item}
+                  </span>
+                ))
+              }
+
+            </div>
+
+          </div>
+
+          <div class="case-cta">
+
+            <a
+              href="#"
+              class="btn-primary"
+            >
+              Ver proyecto
+            </a>
+
+            <a
+              href="/projects"
+              class="btn-ghost"
+            >
+              Volver →
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="case-hero-right">
+
+          <div>
+
+            <div class="case-meta-title">
+              Ficha del proyecto
+            </div>
+
+            <div class="case-meta-grid">
+
+              <div class="meta-row">
+
+                <span class="meta-key">
+                  Categoría
+                </span>
+
+                <span class="meta-val">
+                  {project.category}
+                </span>
+
+              </div>
+
+              <div class="meta-row">
+
+                <span class="meta-key">
+                  Rol
+                </span>
+
+                <span class="meta-val">
+                  {project.role}
+                </span>
+
+              </div>
+
+              <div class="meta-row">
+
+                <span class="meta-key">
+                  Año
+                </span>
+
+                <span class="meta-val">
+                  {project.year}
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="case-hero-preview">
+
+            <img
+              src={project.image}
+              alt={project.title}
+              style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+              "
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+
+      <div class="section-header">
+
+        <span class="section-num">
+          // 02
+        </span>
+
+        <h2 class="section-title">
+          OVERVIEW
+        </h2>
+
+        <div class="section-rule"></div>
+
+      </div>
+
+      <div class="overview-grid">
+
+        <div>
+
+          <div class="overview-lead">
+            Interfaces construidas con criterio visual,
+            performance y enfoque editorial.
+          </div>
+
+          <div class="overview-body">
+
+            <p>
+              {project.longDescription}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</MainLayout>

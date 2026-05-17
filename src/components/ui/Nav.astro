@@ -1,0 +1,67 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const links = [
+  {
+    name: 'Proyectos',
+    href: '/projects',
+  },
+  {
+    name: 'Sobre mí',
+    href: '/about',
+  },
+];
+---
+
+<nav
+  class="sticky top-0 z-50 border-b border-[var(--rule)] bg-[color:var(--bg)]/95 backdrop-blur-xl"
+>
+
+  <div
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent,rgba(139,26,26,0.03),transparent)]"
+  ></div>
+
+  <!-- MÁS GRANDE -->
+  <div
+    class="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between px-10"
+  >
+
+    <!-- LOGO -->
+    <a
+      href="/"
+      class="font-display text-[30px] leading-none tracking-[-0.02em] text-[var(--white)]"
+    >
+      <span>JORGE</span>
+
+      <span class="mx-[3px] text-[rgba(139,26,26,0.9)]">
+        .
+      </span>
+
+      <span>SOTO</span>
+    </a>
+
+    <!-- RIGHT -->
+    <div class="flex items-center gap-10">
+
+      <!-- LINKS -->
+      <div class="hidden items-center gap-10 md:flex">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="font-mono text-[12px] uppercase tracking-[0.28em] text-[var(--white-muted)] transition duration-300 hover:text-[var(--white)]"
+            >
+              {link.name}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- TOGGLE -->
+      <ThemeToggle />
+
+    </div>
+
+  </div>
+
+</nav>

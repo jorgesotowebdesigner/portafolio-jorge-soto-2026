@@ -1,0 +1,75 @@
+<button
+  id="theme-toggle"
+  class="group relative overflow-hidden border border-white/10 bg-[rgba(139,26,26,0.04)] px-4 py-2 font-mono text-[9px] uppercase tracking-[0.22em] text-[var(--white-muted)] transition-all duration-300 hover:border-[rgba(139,26,26,0.45)] hover:bg-[rgba(139,26,26,0.12)] hover:text-[var(--white)]"
+>
+
+  <!-- glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,26,26,0.18),transparent_70%)] opacity-0 transition duration-500 group-hover:opacity-100"></div>
+
+  <!-- content -->
+  <span class="relative z-10 flex items-center gap-2">
+
+    <span id="theme-icon">
+      ☾
+    </span>
+
+    <span id="theme-label">
+      Dark
+    </span>
+
+  </span>
+
+</button>
+
+<script is:inline>
+
+  const html = document.documentElement;
+
+  const button = document.getElementById('theme-toggle');
+
+  const label = document.getElementById('theme-label');
+
+  const icon = document.getElementById('theme-icon');
+
+  const applyTheme = () => {
+
+    const isLight = html.classList.contains('light');
+
+    if (isLight) {
+
+      label.textContent = 'Light';
+      icon.textContent = '☀';
+
+    } else {
+
+      label.textContent = 'Dark';
+      icon.textContent = '☾';
+
+    }
+
+  };
+
+  if (localStorage.getItem('theme') === 'light') {
+
+    html.classList.add('light');
+
+  }
+
+  applyTheme();
+
+  button?.addEventListener('click', () => {
+
+    html.classList.toggle('light');
+
+    localStorage.setItem(
+      'theme',
+      html.classList.contains('light')
+        ? 'light'
+        : 'dark'
+    );
+
+    applyTheme();
+
+  });
+
+</script>

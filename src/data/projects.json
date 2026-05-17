@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "sistema-diseno",
+
+    "heroWord": "DS",
+
+    "title": "Sistema de Diseño para SaaS",
+
+    "category": "Sistema de Diseño",
+
+    "year": "2024",
+
+    "description": "Diseño y desarrollo de un sistema escalable para una plataforma SaaS.",
+
+    "longDescription": "Se construyó una librería reusable basada en design tokens, componentes accesibles y documentación viva utilizando Storybook. El objetivo fue crear una base visual consistente para múltiples productos digitales, optimizando tiempos de desarrollo y manteniendo coherencia entre interfaces.",
+
+    "image": "/preview-muestra.png",
+
+    "role": "UI Design + Frontend",
+
+    "stack": [
+      "Astro",
+      "React",
+      "Tailwind",
+      "Storybook"
+    ]
+  },
+
+  {
+    "slug": "landing-editorial",
+
+    "heroWord": "LE",
+
+    "title": "Landing Editorial",
+
+    "category": "Frontend",
+
+    "year": "2024",
+
+    "description": "Landing cinematográfica inspirada en diseño editorial.",
+
+    "longDescription": "Proyecto enfocado en narrativa visual, animaciones suaves y experiencia premium. Se trabajó una estética inspirada en revistas editoriales y composición cinematográfica utilizando Astro, GSAP y una arquitectura optimizada para performance.",
+
+    "image": "/preview-muestra.png",
+
+    "role": "Diseño + Desarrollo",
+
+    "stack": [
+      "Astro",
+      "GSAP",
+      "Tailwind"
+    ]
+  },
+
+  {
+    "slug": "dashboard-analytics",
+
+    "heroWord": "DA",
+
+    "title": "Dashboard Analytics",
+
+    "category": "Dashboard UI",
+
+    "year": "2025",
+
+    "description": "Visualización de métricas y datos en tiempo real.",
+
+    "longDescription": "Dashboard diseñado para plataformas SaaS con enfoque en visualización clara de datos, dark mode nativo y componentes reutilizables. Se priorizó jerarquía visual, experiencia de usuario y rendimiento frontend.",
+
+    "image": "/preview-muestra.png",
+
+    "role": "Frontend Developer",
+
+    "stack": [
+      "React",
+      "Recharts",
+      "Zustand"
+    ]
+  }
+]

@@ -1,0 +1,225 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Nav from '../../components/ui/Nav.astro';
+---
+
+<MainLayout title="Proyectos">
+
+  <div class="min-h-screen bg-[var(--bg)] text-[var(--white)]">
+
+    <Nav />
+
+    <!-- HERO -->
+    <section
+      class="relative overflow-hidden border-b border-[var(--rule)] px-5 py-12 lg:px-8 lg:py-14"
+    >
+
+      <!-- Background -->
+      <div
+        class="pointer-events-none absolute right-[-40px] top-[-10px] select-none font-display text-[min(240px,18vw)] leading-none tracking-[0.04em] text-[rgba(139,26,26,0.06)]"
+      >
+        WORK
+      </div>
+
+      <div
+        class="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between"
+      >
+
+        <!-- LEFT -->
+        <div>
+
+          <div
+            class="mb-5 font-mono text-[11px] uppercase tracking-[0.28em] text-[rgba(139,26,26,0.72)]"
+          >
+            // 02 · PROYECTOS
+          </div>
+
+          <h1
+            class="max-w-[860px] font-display text-[clamp(52px,5.8vw,98px)] leading-[0.9] tracking-[0.01em]"
+          >
+            Casos de estudio
+            <br />
+            & experiencias web
+          </h1>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="max-w-[480px]">
+
+          <p
+            class="text-[15px] font-light leading-[1.8] text-[var(--white-muted)]"
+          >
+            Selección de proyectos enfocados en frontend,
+            diseño UI/UX, ecommerce y experiencias digitales
+            modernas utilizando Astro, React, Tailwind,
+            Shopify y WordPress.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FILTERS -->
+    <div
+      class="flex gap-3 overflow-x-auto border-b border-[var(--rule)] bg-[var(--bg2)] px-5 py-4 lg:px-8"
+    >
+
+      <button class="filter-btn active">
+        Todos
+      </button>
+
+      <button class="filter-btn">
+        Astro
+      </button>
+
+      <button class="filter-btn">
+        React
+      </button>
+
+      <button class="filter-btn">
+        Shopify
+      </button>
+
+      <button class="filter-btn">
+        WordPress
+      </button>
+
+      <button class="filter-btn">
+        UI / UX
+      </button>
+
+      <button class="filter-btn">
+        Landing Pages
+      </button>
+
+    </div>
+
+    <!-- FEATURED -->
+    <section
+      class="group relative grid border-b border-[var(--rule)] lg:grid-cols-[52%_48%]"
+    >
+
+      <!-- LEFT -->
+      <div
+        class="flex flex-col justify-between border-b border-[var(--rule)] bg-[var(--bg)] px-6 py-9 transition-all duration-500 group-hover:bg-[rgba(139,26,26,0.03)] lg:border-b-0 lg:border-r lg:px-8 lg:py-10"
+      >
+
+        <div>
+
+          <!-- META -->
+          <div class="mb-8 flex flex-wrap items-center gap-4">
+
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.3em] text-[rgba(139,26,26,0.78)]"
+            >
+              01 · Destacado
+            </span>
+
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--white-dim)]"
+            >
+              2024
+            </span>
+
+            <span
+              class="border border-[rgba(139,26,26,0.3)] bg-[rgba(139,26,26,0.04)] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[rgba(139,26,26,0.85)]"
+            >
+              Sistema de Diseño
+            </span>
+
+          </div>
+
+          <!-- TITLE -->
+          <h2
+            class="mb-5 max-w-[620px] font-serif text-[clamp(34px,3vw,52px)] leading-[1.04] tracking-[-0.03em]"
+          >
+            Sistema de Diseño
+            <br />
+            para SaaS B2B
+          </h2>
+
+          <!-- DESCRIPTION -->
+          <p
+            class="mb-8 max-w-[620px] text-[15px] font-light leading-[1.8] text-[var(--white-muted)]"
+          >
+            Diseño y desarrollo de un sistema de componentes escalable desde
+            cero para una plataforma de gestión empresarial. Incluye tokens de
+            diseño, documentación viva y librería React con más de 40
+            componentes.
+          </p>
+
+          <!-- TAGS -->
+          <div class="mb-10 flex flex-wrap gap-3">
+
+            <span class="tag">React</span>
+            <span class="tag">Storybook</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Design Tokens</span>
+            <span class="tag">WCAG</span>
+
+          </div>
+
+        </div>
+
+        <!-- ACTION -->
+        <div>
+
+          <a
+            href="/projects/sistema-diseno"
+            class="hero-button editorial-button group inline-flex items-center gap-3 px-5 py-3 text-[10px] tracking-[0.18em]"
+          >
+
+            Ver proyecto
+
+            <span
+              class="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              ↗
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div
+        class="relative flex items-center justify-center overflow-hidden bg-[rgba(139,26,26,0.05)] p-8 lg:p-10"
+      >
+
+        <!-- Glow -->
+        <div
+          class="absolute h-[320px] w-[320px] rounded-full bg-[rgba(139,26,26,0.12)] blur-[120px]"
+        ></div>
+
+        <!-- Mockup -->
+        <div
+          class="editorial-panel relative flex aspect-[16/10] w-full max-w-[560px] items-center justify-center overflow-hidden border border-[rgba(139,26,26,0.18)]"
+        >
+
+          <img
+            src="/preview-muestra.png"
+            alt="Preview sistema diseño"
+            class="h-full w-full object-cover"
+          />
+
+        </div>
+
+        <!-- Number -->
+        <div
+          class="pointer-events-none absolute bottom-4 right-6 font-display text-[90px] leading-none text-[rgba(139,26,26,0.08)]"
+        >
+          01
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</MainLayout>
