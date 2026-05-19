@@ -1,80 +1,78 @@
 [
   {
-    "slug": "sistema-diseno",
+    "id": "san-juan-de-dios",
 
-    "heroWord": "DS",
+    "number": "01",
 
-    "title": "Sistema de Diseño para SaaS",
+    "year": "2023",
 
-    "category": "Sistema de Diseño",
+    "title": "Plataforma Web Institucional para Escuela Especial San Juan de Dios",
 
-    "year": "2024",
+    "shortDescription": "Diseño y desarrollo de una plataforma institucional enfocada en accesibilidad, difusión y captación de colaboradores.",
 
-    "description": "Diseño y desarrollo de un sistema escalable para una plataforma SaaS.",
+    "description": "Proyecto desarrollado junto a COD1NE, agencia digital académica formada durante la carrera de Desarrollo y Diseño Web en DUOC UC. El objetivo fue colaborar con la Escuela Especial de Retos Múltiples San Juan de Dios mediante el diseño y desarrollo de una plataforma web institucional que permitiera aumentar su visibilidad, facilitar el acceso a información para familias y potenciar la captación de auspiciadores y colaboradores.",
 
-    "longDescription": "Se construyó una librería reusable basada en design tokens, componentes accesibles y documentación viva utilizando Storybook. El objetivo fue crear una base visual consistente para múltiples productos digitales, optimizando tiempos de desarrollo y manteniendo coherencia entre interfaces.",
+    "overview": "La Escuela Especial de Retos Múltiples San Juan de Dios necesitaba una plataforma digital que permitiera aumentar su visibilidad, facilitar el acceso a información para familias y potenciar la captación de colaboradores y auspiciadores para apoyar a niños con síndrome de Down.",
 
-    "image": "/preview-muestra.png",
+    "challenge": [
+      "El proyecto comenzó con investigación en terreno y reuniones junto a la institución para comprender sus necesidades reales.",
+      "Uno de los principales desafíos fue construir una experiencia accesible y cercana que permitiera visibilizar el trabajo de la escuela."
+    ],
 
-    "role": "UI Design + Frontend",
+    "role": "Participé en UX Research, wireframing, diseño UI y desarrollo frontend dentro de un equipo de 4 personas.",
 
-    "stack": [
-      "Astro",
-      "React",
-      "Tailwind",
-      "Storybook"
-    ]
-  },
+    "result": "El resultado final fue una plataforma institucional responsive y accesible desarrollada en WordPress, permitiendo a la escuela gestionar contenidos de manera sencilla y fortalecer su presencia digital.",
 
-  {
-    "slug": "landing-editorial",
+    "cta": "Diseñemos experiencias digitales centradas en usuarios reales.",
 
-    "heroWord": "LE",
+    "client": "Escuela Especial San Juan de Dios",
 
-    "title": "Landing Editorial",
+    "agency": "COD1NE",
 
-    "category": "Frontend",
+    "category": "UX/UI",
 
-    "year": "2024",
+    "cover": "/src/assets/projects/san-juan-de-dios/cover.png",
 
-    "description": "Landing cinematográfica inspirada en diseño editorial.",
+    "gallery": [
+      "/src/assets/projects/san-juan-de-dios/preview-1.png",
+      "/src/assets/projects/san-juan-de-dios/preview-2.png"
+    ],
 
-    "longDescription": "Proyecto enfocado en narrativa visual, animaciones suaves y experiencia premium. Se trabajó una estética inspirada en revistas editoriales y composición cinematográfica utilizando Astro, GSAP y una arquitectura optimizada para performance.",
+    "url": "#",
 
-    "image": "/preview-muestra.png",
-
-    "role": "Diseño + Desarrollo",
+    "featured": true,
 
     "stack": [
-      "Astro",
-      "GSAP",
-      "Tailwind"
-    ]
-  },
+      "UX/UI",
+      "Research",
+      "WordPress",
+      "Responsive",
+      "Frontend",
+      "CMS"
+    ],
 
-  {
-    "slug": "dashboard-analytics",
+    "process": [
+      "Discovery & Research",
+      "Wireframes",
+      "UI Design",
+      "Frontend Development",
+      "WordPress CMS",
+      "Responsive Testing",
+      "Launch"
+    ],
 
-    "heroWord": "DA",
+    "objectives": [
+      "Dar visibilidad a la institución",
+      "Facilitar acceso a información para familias",
+      "Potenciar captación de auspiciadores",
+      "Diseñar experiencia accesible"
+    ],
 
-    "title": "Dashboard Analytics",
-
-    "category": "Dashboard UI",
-
-    "year": "2025",
-
-    "description": "Visualización de métricas y datos en tiempo real.",
-
-    "longDescription": "Dashboard diseñado para plataformas SaaS con enfoque en visualización clara de datos, dark mode nativo y componentes reutilizables. Se priorizó jerarquía visual, experiencia de usuario y rendimiento frontend.",
-
-    "image": "/preview-muestra.png",
-
-    "role": "Frontend Developer",
-
-    "stack": [
-      "React",
-      "Recharts",
-      "Zustand"
+    "learnings": [
+      "Investigación UX aplicada",
+      "Comunicación con clientes reales",
+      "Levantamiento de información",
+      "Diseño centrado en el usuario"
     ]
   }
 ]

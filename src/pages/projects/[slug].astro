@@ -1,219 +1,406 @@
 ---
-import projects from '../../data/projects.json';
-
-import MainLayout from '../../layouts/MainLayout.astro';
-import Nav from '../../components/ui/Nav.astro';
-
-import '../../styles/project-detail.css';
+import MainLayout from "../../layouts/MainLayout.astro";
+import projects from "../../data/projects.json";
 
 export async function getStaticPaths() {
+
   return projects.map((project) => ({
+
     params: {
-      slug: project.slug
+      slug: project.id
+    },
+
+    props: {
+      project
     }
+
   }));
+
 }
 
-const { slug } = Astro.params;
-
-const project = projects.find(
-  (item) => item.slug === slug
-);
-
-if (!project) {
-  return Astro.redirect('/projects');
-}
+const { project } = Astro.props;
 ---
 
 <MainLayout title={project.title}>
 
-  <div class="page">
+  <!-- HERO -->
+  <section class="border-b border-[var(--rule)] py-24">
 
-    <Nav />
+    <div class="mx-auto max-w-[1480px] px-12">
 
-    <!-- HERO -->
-    <header class="case-hero">
+      <div class="mb-12 flex items-center gap-5">
 
-      <div class="case-hero-bg">
-        {project.heroWord || 'CASE'}
-      </div>
-
-      <div class="panel-id">
-        // 01 · CASO DE ESTUDIO
-      </div>
-
-      <div class="case-hero-grid">
-
-        <!-- LEFT -->
-        <div class="case-hero-left">
-
-          <div>
-
-            <div class="case-breadcrumb">
-
-              Proyectos
-              <span>/</span>
-              {project.title}
-
-            </div>
-
-            <div class="case-num">
-              {project.year}
-            </div>
-
-            <h1 class="case-title">
-              {project.title}
-            </h1>
-
-            <p class="case-tagline">
-              {project.description}
-            </p>
-
-            <div class="case-tags">
-
-              {
-                project.stack.map((item) => (
-                  <span class="tag">
-                    {item}
-                  </span>
-                ))
-              }
-
-            </div>
-
-          </div>
-
-          <div class="case-cta">
-
-            <a
-              href="#"
-              class="btn-primary"
-            >
-              Ver proyecto
-            </a>
-
-            <a
-              href="/projects"
-              class="btn-ghost"
-            >
-              Volver →
-            </a>
-
-          </div>
-
-        </div>
-
-        <!-- RIGHT -->
-        <div class="case-hero-right">
-
-          <div>
-
-            <div class="case-meta-title">
-              Ficha del proyecto
-            </div>
-
-            <div class="case-meta-grid">
-
-              <div class="meta-row">
-
-                <span class="meta-key">
-                  Categoría
-                </span>
-
-                <span class="meta-val">
-                  {project.category}
-                </span>
-
-              </div>
-
-              <div class="meta-row">
-
-                <span class="meta-key">
-                  Rol
-                </span>
-
-                <span class="meta-val">
-                  {project.role}
-                </span>
-
-              </div>
-
-              <div class="meta-row">
-
-                <span class="meta-key">
-                  Año
-                </span>
-
-                <span class="meta-val">
-                  {project.year}
-                </span>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="case-hero-preview">
-
-            <img
-              src={project.image}
-              alt={project.title}
-              style="
-                width:100%;
-                height:100%;
-                object-fit:cover;
-              "
-            />
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </header>
-
-    <!-- OVERVIEW -->
-    <section class="section">
-
-      <div class="section-header">
-
-        <span class="section-num">
-          // 02
+        <span
+          class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        >
+          {project.year}
         </span>
 
-        <h2 class="section-title">
-          OVERVIEW
-        </h2>
-
-        <div class="section-rule"></div>
+        <span
+          class="font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--white-muted)]"
+        >
+          {project.agency}
+        </span>
 
       </div>
 
-      <div class="overview-grid">
+      <h1
+        class="mb-10 max-w-[1200px] font-serif text-[clamp(60px,7vw,140px)] leading-[0.9] tracking-[-0.05em]"
+      >
+        {project.title}
+      </h1>
 
-        <div>
+      <p
+        class="max-w-[900px] text-[18px] leading-[2] text-[var(--white-muted)]"
+      >
+        {project.description}
+      </p>
 
-          <div class="overview-lead">
-            Interfaces construidas con criterio visual,
-            performance y enfoque editorial.
-          </div>
+    </div>
 
-          <div class="overview-body">
+  </section>
 
-            <p>
-              {project.longDescription}
+  <!-- COVER -->
+  <section class="border-b border-[var(--rule)]">
+
+    <img
+      src={project.cover}
+      alt={project.title}
+      class="h-auto w-full"
+    />
+
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="border-b border-[var(--rule)] py-24">
+
+    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
+
+      <span
+        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        Resumen
+      </span>
+
+      <p
+        class="max-w-[900px] text-[20px] leading-[2] text-[var(--white-muted)]"
+      >
+        {project.overview}
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CHALLENGE -->
+  <section class="border-b border-[var(--rule)] py-24">
+
+    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
+
+      <span
+        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        Desafío
+      </span>
+
+      <div class="space-y-8">
+
+        {
+          project.challenge.map((item) => (
+
+            <p
+              class="max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
+            >
+              {item}
             </p>
 
-          </div>
+          ))
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ROLE -->
+  <section class="border-b border-[var(--rule)] py-24">
+
+    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
+
+      <span
+        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        Mi Rol
+      </span>
+
+      <div>
+
+        <p
+          class="mb-10 max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
+        >
+          {project.role}
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+
+          {
+            project.stack.map((item, index) => (
+
+              <>
+
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--white-muted)]"
+                >
+                  {item}
+                </span>
+
+                {
+                  index < project.stack.length - 1 && (
+                    <span class="text-[rgba(139,26,26,0.5)]">·</span>
+                  )
+                }
+
+              </>
+
+            ))
+          }
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
+
+<!-- PROCESS -->
+<section class="border-b border-[var(--rule)] py-32">
+
+  <div class="mx-auto max-w-[1480px] px-12">
+
+    <span
+      class="mb-20 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+    >
+      Proceso
+    </span>
+
+    <div class="relative mx-auto max-w-[980px] border-l border-[var(--rule)]">
+
+      {
+        project.process.map((step, index) => (
+
+          <div
+            class="group relative grid gap-6 py-16 pl-16 transition-all duration-500 hover:bg-[rgba(139,26,26,0.02)]"
+          >
+
+            <!-- DOT -->
+            <div
+              class="absolute left-[-7px] top-[74px] h-[14px] w-[14px] rounded-full border border-[rgba(139,26,26,0.6)] bg-[var(--bg)] transition-all duration-300 group-hover:scale-125 group-hover:bg-[rgba(139,26,26,0.8)]"
+            ></div>
+
+            <!-- NUMBER -->
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.3em] text-[rgba(139,26,26,0.75)]"
+            >
+              0{index + 1}
+            </span>
+
+            <!-- CONTENT -->
+            <div>
+
+              <h3
+                class="mb-4 font-serif text-[clamp(30px,2.5vw,54px)] leading-[0.95] tracking-[-0.04em]"
+              >
+                {step}
+              </h3>
+
+              <p
+                class="max-w-[620px] text-[16px] leading-[2] text-[var(--white-muted)]"
+              >
+                {
+                  index === 0 &&
+                  "Investigación inicial junto a la institución, reuniones, entrevistas y levantamiento de información para comprender las necesidades reales del proyecto."
+                }
+
+                {
+                  index === 1 &&
+                  "Creación de wireframes y estructura de navegación enfocada en accesibilidad y claridad de contenido."
+                }
+
+                {
+                  index === 2 &&
+                  "Diseño visual de interfaces utilizando una estética institucional, accesible y centrada en usuarios reales."
+                }
+
+                {
+                  index === 3 &&
+                  "Desarrollo frontend y construcción de componentes adaptados a distintos dispositivos."
+                }
+
+                {
+                  index === 4 &&
+                  "Implementación del CMS en WordPress para facilitar la administración de contenido."
+                }
+
+                {
+                  index === 5 &&
+                  "Pruebas responsive y validación visual en distintos tamaños de pantalla."
+                }
+
+                {
+                  index === 6 &&
+                  "Publicación final del sitio y entrega del proyecto."
+                }
+
+              </p>
+
+            </div>
+
+          </div>
+
+        ))
+      }
+
+    </div>
 
   </div>
+
+</section>
+
+  <!-- RESULT -->
+  <section class="border-b border-[var(--rule)] py-24">
+
+    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
+
+      <span
+        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        Resultado
+      </span>
+
+      <div>
+
+        <p
+          class="mb-10 max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
+        >
+          {project.result}
+        </p>
+
+        <a
+          href={project.url}
+          target="_blank"
+          class="editorial-cta"
+        >
+
+          Visitar sitio
+
+          <span>
+            ↗
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LEARNINGS -->
+  <section class="border-b border-[var(--rule)] py-24">
+
+    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
+
+      <span
+        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        Aprendizajes
+      </span>
+
+      <div class="space-y-8">
+
+        {
+          project.learnings.map((item) => (
+
+            <p
+              class="max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
+            >
+              {item}
+            </p>
+
+          ))
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section class="border-b border-[var(--rule)] py-24">
+
+    <div class="mx-auto max-w-[1480px] px-12">
+
+      <span
+        class="mb-16 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        Galería
+      </span>
+
+      <div class="grid gap-10 lg:grid-cols-2">
+
+        {
+          project.gallery.map((image) => (
+
+            <img
+              src={image}
+              alt={project.title}
+              class="w-full object-cover"
+            />
+
+          ))
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="py-32">
+
+    <div class="mx-auto max-w-[1100px] px-12 text-center">
+
+      <span
+        class="mb-6 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+      >
+        ¡Colaboremos!
+      </span>
+
+      <h2
+        class="mb-10 font-serif text-[clamp(44px,5vw,96px)] leading-[0.95] tracking-[-0.05em]"
+      >
+        {project.cta}
+      </h2>
+
+      <a
+        href="/#contact"
+        class="editorial-cta"
+      >
+
+        Hablemos
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
 
 </MainLayout>

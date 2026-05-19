@@ -257,114 +257,136 @@ body {
 /* SELECTION */
 
 ::selection {
-  background: rgba(139, 26, 26, 0.35);
+  background: var(--red);
   color: #f0ede6;
 }
 
-/*Botón de "Ver Proyectos" */
+/* BOTÓN EDITORIAL */
+
 .editorial-button {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  width: 185px;
-  height: 54px;
+  width: 170px;
+  height: 52px;
 
-  background: rgba(45, 8, 8, 0.35);
-  border: 1px solid rgba(120, 30, 30, 0.22);
+  background: rgba(120, 20, 20, 0.14);
+  border: 1px solid rgba(185, 28, 28, 0.35);
 
-  color: var(--foreground);
+  color: var(--text);
 
   text-decoration: none;
 
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.42em;
   text-transform: uppercase;
 
   clip-path: polygon(0 0, 100% 0, 100% 76%, 92% 100%, 0 100%);
 
+  backdrop-filter: blur(10px);
+
   transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .editorial-button:hover {
   transform: translateY(-2px);
 
-  background: rgba(80, 15, 15, 0.45);
+  background: rgba(185, 28, 28, 0.22);
 
-  border-color: rgba(160, 40, 40, 0.3);
+  border-color: rgba(185, 28, 28, 0.55);
+
+  box-shadow:
+    0 0 25px rgba(185, 28, 28, 0.18);
 }
 
 /* LIGHT MODE */
 
 .light .editorial-button,
 [data-theme="light"] .editorial-button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(185, 28, 28, 0.05);
 
-  width: 185px;
-  height: 54px;
+  border: 1px solid rgba(185, 28, 28, 0.18);
 
-  background: rgba(56, 187, 73, 0.35);
-  border: 1px solid rgba(120, 30, 30, 0.22);
-
-  color: var(--foreground);
-
-  text-decoration: none;
-
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-
-  clip-path: polygon(0 0, 100% 0, 100% 76%, 92% 100%, 0 100%);
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
+  color: #161616;
 }
 
 .light .editorial-button:hover,
 [data-theme="light"] .editorial-button:hover {
-  transform: translateY(-2px);
+  background: rgba(185, 28, 28, 0.1);
 
-  background: rgba(15, 13, 185, 0.45);
+  border-color: rgba(185, 28, 28, 0.3);
 
-  border-color: rgba(160, 40, 40, 0.3);
+  box-shadow:
+    0 0 18px rgba(185, 28, 28, 0.08);
 }
 
-/* Botón de github */
+/* LINK GITHUB HERO */
 
-.editorial-link {
+.hero-github {
+  position: relative;
+
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 
-  color: var(--foreground);
-
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.35em;
+
+  letter-spacing: 0.34em;
   text-transform: uppercase;
+
+  color: var(--text);
+
   text-decoration: none;
 
   transition:
     opacity 0.3s ease,
     transform 0.3s ease,
-    gap 0.3s ease;
+    color 0.3s ease;
 }
 
-.editorial-link:hover {
-  opacity: 0.7;
-  gap: 0.8rem;
-  transform: translateX(2px);
+.hero-github::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 1px;
+
+  background: rgba(139, 26, 26, 0.65);
+
+  transition: width 0.3s ease;
+}
+
+.hero-github:hover {
+  transform: translateX(3px);
+
+  color: rgba(255,255,255,0.92);
+}
+
+.hero-github:hover::after {
+  width: 100%;
+}
+
+/* LIGHT MODE */
+
+.light .hero-github,
+[data-theme="light"] .hero-github {
+  color: #111111;
+}
+
+.light .hero-github:hover,
+[data-theme="light"] .hero-github:hover {
+  color: rgba(139, 26, 26, 0.9);
 }
 
 /* RESPONSIVE SCALE */
