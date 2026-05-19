@@ -1,43 +1,22 @@
-# Astro Starter Kit: Minimal
+# Jorge Soto — Portfolio 2026
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portfolio personal desarrollado con Astro, TailwindCSS y JavaScript.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tecnologías
 
-## 🚀 Project Structure
+- Astro
+- TailwindCSS
+- JavaScript
+- Responsive Design
 
-Inside of your Astro project, you'll see the following folders and files:
+## Proyecto
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Portafolio enfocado en frontend, UX/UI y experiencias web editoriales.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Autor
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Jorge Soto
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Estado
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Actualmente en desarrollo.
