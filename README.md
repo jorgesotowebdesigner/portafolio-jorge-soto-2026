@@ -11,7 +11,7 @@ Portfolio personal desarrollado con Astro, TailwindCSS y JavaScript.
 
 ## Proyecto
 
-Portafolio enfocado en frontend, UX/UI y experiencias web editoriales.
+Portafolio diseñado como editorial enfocado en frontend, UX/UI y experiencias web.
 
 ## Autor
 
