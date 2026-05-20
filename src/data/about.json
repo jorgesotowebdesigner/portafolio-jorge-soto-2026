@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "section": "// 04 · SOBRE MÍ",
+    "title": "SOBRE MÍ",
+    "subtitle": "El diseñador detrás del trabajo.",
+    "watermark": "JORGE",
+    "initials": "JS",
+    "meta": "Jorge Soto · Dev & Design"
+  },
+
+  "intro": {
+    "name": "JORGE",
+    "lastname": "SOTO",
+    "role": "Frontend Dev · UI Designer",
+    "location": "Viña del Mar, CL",
+    "mode": "Freelance · Colaboraciones",
+    "stack": "Astro · React · Tailwind · Wordpress · Shopify",
+    "since": "2019",
+    "available": "Disponible para proyectos",
+
+    "headline": "Soy técnico en diseño y desarrollo web titulado en DUOC UC, enfocado en frontend, diseño UI y experiencias digitales modernas. Me interesa crear sitios visualmente sólidos, funcionales y bien estructurados, combinando diseño y desarrollo en un mismo flujo de trabajo.",
+
+    "paragraphs": [
+      "Comencé desde el área del diseño y con el tiempo fui acercándome al desarrollo frontend para tener mayor control sobre las interfaces y experiencias que construyo.",
+
+      "Actualmente trabajo principalmente con Astro, React, Tailwind y WordPress, desarrollando sitios web modernos, portfolios, landing pages y proyectos enfocados en diseño visual y experiencia de usuario.",
+
+      "Disfruto trabajar la parte visual de una interfaz: tipografía, composición, jerarquía, responsive design y detalles que ayudan a que una web se sienta más clara, sólida y profesional."
+    ]
+  },
+
+  "philosophy": [
+    {
+      "number": "01",
+      "title": "Forma y función en lo mismo",
+      "text": "Las interfaces deben verse bien, pero también sentirse rápidas, intuitivas y sólidas."
+    },
+    {
+      "number": "02",
+      "title": "El detalle es invisible",
+      "text": "Animaciones suaves, composición consistente y sistemas visuales coherentes crean experiencias premium."
+    },
+    {
+      "number": "03",
+      "title": "Menos, pero mejor",
+      "text": "Prefiero sistemas simples, claros y bien ejecutados antes que interfaces saturadas."
+    }
+  ],
+
+  "skills": {
+    "design": [
+      "Figma",
+      "Sistemas de Diseño",
+      "Design Tokens",
+      "Prototipado",
+      "Motion Design",
+      "Tipografía",
+      "UX Research",
+      "Accessibility"
+    ],
+
+    "development": [
+      "Astro",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Next.js",
+      "GSAP",
+      "Framer Motion",
+      "Storybook"
+    ],
+
+    "quality": [
+      "Core Web Vitals",
+      "Lighthouse",
+      "WCAG 2.1",
+      "Testing",
+      "Git",
+      "CI/CD"
+    ],
+
+    "process": [
+      "Design Thinking",
+      "Atomic Design",
+      "Agile",
+      "Documentación",
+      "Handoff",
+      "Code Review"
+    ]
+  },
+
+  "offwork": {
+    "title": "Todo lo que consumo termina influyendo en cómo diseño.",
+
+    "description": "Me inspiran los cómics, el cine, la música, el fútbol, el surf y las experiencias digitales con personalidad fuerte.",
+
+    "items": [
+      {
+        "category": "Comics",
+        "title": "Narrativa visual",
+        "text": "Spiderman, composición editorial y storytelling visual aplicado a interfaces digitales."
+      },
+      {
+        "category": "Cine & Música",
+        "title": "Ritmo & atmósfera",
+        "text": "Uso composición, contraste y timing visual inspirados en experiencias cinematográficas."
+      },
+      {
+        "category": "Deporte",
+        "title": "Energía & movimiento",
+        "text": "El fútbol y el surf influyen en mi forma de pensar ritmo, fluidez y equilibrio visual."
+      }
+    ]
+  },
+
+  "cta": {
+    "title": "Construyamos algo con identidad propia.",
+    "text": "Me interesa colaborar en proyectos donde el diseño, la experiencia y el frontend tengan el mismo nivel de importancia.",
+
+    "email": "jorge@email.com",
+    "github": "github.com/jorgesoto",
+    "instagram": "@jorgesoto"
+  }
+}

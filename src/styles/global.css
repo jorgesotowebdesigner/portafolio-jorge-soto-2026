@@ -10,11 +10,11 @@
   --red: rgba(139, 26, 26, 1);
 
   /* REDS */
-  --red-faint: rgba(139, 26, 26, 0.18);
-  --red-soft: rgba(139, 26, 26, 0.24);
-  --red-mid: rgba(139, 26, 26, 0.34);
-  --red-strong: rgba(139, 26, 26, 0.52);
-  --red-border: rgba(139, 26, 26, 0.62);
+  --red-faint: rgba(139, 26, 26, 0.26);
+  --red-soft: rgba(139, 26, 26, 0.34);
+  --red-mid: rgba(139, 26, 26, 0.46);
+  --red-strong: rgba(139, 26, 26, 0.68);
+  --red-border: rgba(139, 26, 26, 0.78);
 
   /* TEXT SYSTEM */
   --text: #f0ede6;
@@ -61,11 +61,11 @@
   --rule: rgba(0, 0, 0, 0.08);
 
   /* REDS */
-  --red-faint: rgba(139, 26, 26, 0.08);
-  --red-soft: rgba(139, 26, 26, 0.14);
-  --red-mid: rgba(139, 26, 26, 0.22);
-  --red-strong: rgba(139, 26, 26, 0.36);
-  --red-border: rgba(139, 26, 26, 0.48);
+  --red-faint: rgba(139, 26, 26, 0.12);
+  --red-soft: rgba(139, 26, 26, 0.18);
+  --red-mid: rgba(139, 26, 26, 0.28);
+  --red-strong: rgba(139, 26, 26, 0.42);
+  --red-border: rgba(139, 26, 26, 0.56);
 }
 
 html,
@@ -302,8 +302,7 @@ body {
 
   border-color: rgba(185, 28, 28, 0.55);
 
-  box-shadow:
-    0 0 25px rgba(185, 28, 28, 0.18);
+  box-shadow: 0 0 25px rgba(185, 28, 28, 0.18);
 }
 
 /* LIGHT MODE */
@@ -323,8 +322,7 @@ body {
 
   border-color: rgba(185, 28, 28, 0.3);
 
-  box-shadow:
-    0 0 18px rgba(185, 28, 28, 0.08);
+  box-shadow: 0 0 18px rgba(185, 28, 28, 0.08);
 }
 
 /* LINK GITHUB HERO */
@@ -370,7 +368,7 @@ body {
 .hero-github:hover {
   transform: translateX(3px);
 
-  color: rgba(255,255,255,0.92);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-github:hover::after {
@@ -387,6 +385,46 @@ body {
 .light .hero-github:hover,
 [data-theme="light"] .hero-github:hover {
   color: rgba(139, 26, 26, 0.9);
+}
+
+/* SKILL TAG */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 12px 18px;
+
+  border: 1px solid var(--rule);
+
+  background: rgba(255,255,255,0.02);
+
+  font-size: 14px;
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+  backdrop-filter: blur(4px);
+}
+
+.skill-tag:hover {
+  background: rgba(139,26,26,0.08);
+
+  border-color: rgba(139,26,26,0.28);
+
+  transform: translateY(-2px);
+}
+
+.light .skill-tag {
+  background: rgba(0,0,0,0.015);
+}
+
+.light .skill-tag:hover {
+  background: rgba(139,26,26,0.06);
 }
 
 /* RESPONSIVE SCALE */

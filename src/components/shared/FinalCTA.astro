@@ -1,0 +1,75 @@
+---
+const {
+  section = "// CONTACTO",
+  title,
+  italic,
+  description,
+  primaryText = "Hablemos",
+  primaryHref = "mailto:correo@email.com",
+  secondaryText = "GitHub ↗",
+  secondaryHref = "https://github.com",
+  backgroundWord = "HABLEMOS"
+} = Astro.props;
+---
+
+<section class="relative overflow-hidden border-t border-[var(--rule)] py-32">
+
+  <!-- BG WORD -->
+  <div
+    class="pointer-events-none absolute bottom-[-80px] left-0 font-display text-[260px] leading-none tracking-[-0.06em] text-[rgba(139,26,26,0.08)]"
+  >
+    {backgroundWord}
+  </div>
+
+  <div class="mx-auto max-w-[1480px] px-8">
+
+    <span
+      class="mb-8 block font-mono text-[11px] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.72)]"
+    >
+      {section}
+    </span>
+
+    <h2
+      class="max-w-[980px] font-serif text-[clamp(64px,7vw,130px)] leading-[0.88] tracking-[-0.06em]"
+    >
+      {title}
+
+      {
+        italic && (
+          <span class="italic text-[var(--white-dim)]">
+            {" "}
+            {italic}
+          </span>
+        )
+      }
+    </h2>
+
+    <p
+      class="mt-10 max-w-[620px] text-[18px] leading-[2] text-[var(--white-muted)]"
+    >
+      {description}
+    </p>
+
+    <!-- BUTTONS -->
+    <div class="mt-14 flex flex-wrap gap-5">
+
+      <a
+        href={primaryHref}
+        class="editorial-button"
+      >
+        {primaryText}
+      </a>
+
+      <a
+        href={secondaryHref}
+        target="_blank"
+        class="editorial-button"
+      >
+        {secondaryText}
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,25 +1,296 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-
-
-
-import AboutHero from '../components/about/AboutHero.astro';
-import AboutIntro from '../components/about/AboutIntro.astro';
-import Philosophy from '../components/about/Philosophy.astro';
-import Skills from '../components/about/Skills.astro';
-import OffWork from '../components/about/OffWork.astro';
-import AboutCTA from '../components/about/AboutCTA.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import about from "../data/about.json";
 ---
 
 <MainLayout title="Sobre mí">
+  <main>
+    <!-- HERO -->
+    <section class="border-b border-[var(--rule)] py-16">
+      <div class="mx-auto max-w-[1480px] px-8">
+        <div class="flex items-end justify-between">
+          <div>
+            <div
+              class="mb-6 font-mono text-[10px] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.7)]"
+            >
+              {about.hero.section}
+            </div>
 
+            <h1
+              class="font-display text-[clamp(64px,9vw,120px)] leading-[0.95]"
+            >
+              {about.hero.title}
+            </h1>
 
+            <p class="mt-5 font-serif italic text-[var(--white-muted)]">
+              {about.hero.subtitle}
+            </p>
+          </div>
 
-  <AboutHero />
-  <AboutIntro />
-  <Philosophy />
-  <Skills />
-  <OffWork />
-  <AboutCTA />
+          <div class="hidden flex-col items-end lg:flex">
+            <!-- LOGO -->
+            <div class="relative h-24 w-24">
+              <!-- BACK PANEL -->
+              <div
+                class="editorial-panel absolute inset-[4px_-4px_-4px_4px] z-[1] bg-[rgba(139,26,26,0.28)]"
+              >
+              </div>
 
+              <!-- FRONT PANEL -->
+              <div
+                class="editorial-panel relative z-[2] flex h-24 w-24 items-center justify-center border border-[rgba(139,26,26,0.5)] bg-[rgba(139,26,26,0.16)] font-serif text-4xl font-bold text-[var(--white)]"
+              >
+                JS
+              </div>
+            </div>
+
+            <!-- META -->
+            <div
+              class="mt-6 font-mono text-[9px] uppercase tracking-[0.28em] text-[var(--white-dim)]"
+            >
+              {about.hero.meta}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="border-b border-[var(--rule)] py-20">
+      <div class="mx-auto grid max-w-[1480px] lg:grid-cols-[36%_64%]">
+        <!-- LEFT -->
+        <div class="border-r border-[var(--rule)] px-8">
+          <div class="mb-10">
+            <div class="font-display text-[84px] leading-[0.85]">
+              {about.intro.name}
+            </div>
+
+            <div
+              class="font-display text-[84px] leading-[0.78] text-[var(--white-dim)]"
+            >
+              {about.intro.lastname}
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="grid grid-cols-[120px_1fr]">
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.18em] text-[rgba(139,26,26,0.72)]"
+              >
+                UBICACIÓN
+              </span>
+
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--white-muted)]"
+              >
+                {about.intro.location}
+              </span>
+            </div>
+
+            <div class="grid grid-cols-[120px_1fr]">
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.18em] text-[rgba(139,26,26,0.72)]"
+              >
+                Stack
+              </span>
+
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--white-muted)]"
+              >
+                {about.intro.stack}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="px-10">
+          <p
+            class="max-w-[780px] font-serif text-[clamp(30px,3vw,44px)] leading-[1.4] tracking-[-0.03em]"
+          >
+            {about.intro.headline}
+          </p>
+
+          <div class="mt-12 space-y-8">
+            {
+              about.intro.paragraphs.map((item) => (
+                <p class="max-w-[720px] text-[17px] leading-[2] text-[var(--white-muted)]">
+                  {item}
+                </p>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como Trabajo -->
+    <section class="border-b border-[var(--rule)] py-24">
+      <div class="mx-auto max-w-[1480px] px-8">
+        <div class="mb-16 flex items-end gap-5">
+          <span
+            class="font-mono text-[9px] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.65)]"
+          >
+            // 05
+          </span>
+
+          <h2 class="font-display text-[42px] tracking-[0.05em]">
+            CÓMO TRABAJO
+          </h2>
+
+          <div class="mb-1 h-px flex-1 bg-[var(--rule)]"></div>
+        </div>
+
+        <div class="grid border border-[var(--rule)] lg:grid-cols-3">
+          {
+            about.philosophy.map((item) => (
+              <article class="border-r border-[var(--rule)] bg-[var(--bg3)] p-8">
+                <div class="mb-8 font-display text-[72px] text-[rgba(139,26,26,0.24)]">
+                  {item.number}
+                </div>
+
+                <h3 class="mb-5 font-serif text-[28px] leading-[1.1]">
+                  {item.title}
+                </h3>
+
+                <p class="text-[14px] leading-[1.9] text-[var(--white-muted)]">
+                  {item.text}
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="border-b border-[var(--rule)] py-24">
+      <div class="mx-auto max-w-[1480px] px-8">
+        <!-- HEADER -->
+        <div class="mb-16 flex items-end gap-5">
+          <span
+            class="font-mono text-[9px] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.65)]"
+          >
+            // 06
+          </span>
+
+          <h2
+            class="font-display text-[clamp(44px,6vw,82px)] leading-none tracking-[0.04em]"
+          >
+            HERRAMIENTAS
+          </h2>
+
+          <div class="mb-2 h-px flex-1 bg-[var(--rule)]"></div>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid border border-[var(--rule)] lg:grid-cols-2">
+          <!-- DISEÑO -->
+          <div
+            class="border-b border-[var(--rule)] p-8 lg:border-b-0 lg:border-r lg:p-12"
+          >
+            <div class="mb-8 flex items-center gap-4">
+              <span
+                class="font-mono text-[11ñpx] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.65)]"
+              >
+                Diseño
+              </span>
+
+              <div class="h-px flex-1 bg-[var(--rule)]"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-">
+              {
+                about.skills.design.map((item) => (
+                  <span class="skill-tag">{item}</span>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- DESARROLLO -->
+          <div class="border-b border-[var(--rule)] p-8 lg:border-b-0 lg:p-12">
+            <div class="mb-8 flex items-center gap-4">
+              <span
+                class="font-mono text-[11ñpx] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.65)]"
+              >
+                Desarrollo
+              </span>
+
+              <div class="h-px flex-1 bg-[var(--rule)]"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-">
+              {
+                about.skills.development.map((item) => (
+                  <span class="skill-tag">{item}</span>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- CALIDAD -->
+          <div
+            class="border-b border-[var(--rule)] p-8 lg:border-b-0 lg:border-r lg:p-12"
+          >
+            <div class="mb-8 flex items-center gap-4">
+              <span
+                class="font-mono text-[11ñpx] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.65)]"
+              >
+                Performance & Calidad
+              </span>
+
+              <div class="h-px flex-1 bg-[var(--rule)]"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-">
+              {
+                about.skills.quality.map((item) => (
+                  <span class="skill-tag">{item}</span>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- PROCESO -->
+          <div class="p-8 lg:p-12">
+            <div class="mb-8 flex items-center gap-4">
+              <span
+                class="font-mono text-[11ñpx] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.65)]"
+              >
+                Proceso
+              </span>
+
+              <div class="h-px flex-1 bg-[var(--rule)]"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-">
+              {
+                about.skills.process.map((item) => (
+                  <span class="skill-tag">{item}</span>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-28">
+      <div class="mx-auto max-w-[1480px] px-8">
+        <h2
+          class="max-w-[900px] font-serif text-[clamp(52px,5vw,96px)] leading-[0.9] tracking-[-0.04em]"
+        >
+          {about.cta.title}
+        </h2>
+
+        <p
+          class="mt-8 max-w-[620px] text-[17px] leading-[2] text-[var(--white-muted)]"
+        >
+          {about.cta.text}
+        </p>
+      </div>
+    </section>
+  </main>
 </MainLayout>
