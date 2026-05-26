@@ -1,45 +1,92 @@
 ---
-import '../styles/global.css';
-import Nav from '../components/ui/Nav.astro';
+import "../styles/global.css";
+import Nav from "../components/ui/Nav.astro";
 
-const { title = 'Jorge Soto' } = Astro.props;
+const { title = "Jorge Soto" } = Astro.props;
 ---
 
 <!doctype html>
-
 <html lang="es">
-
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <meta charset="UTF-8" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{title}</title>
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="/favicon.png"
-    />
-
+    <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
 
   <body class="antialiased">
-
+    
     <!-- NAVBAR -->
     <Nav />
 
     <!-- CONTENT -->
     <main class="pt-[0px]">
-
       <slot />
-
     </main>
 
-  </body>
+    <!-- GLOBAL THEME SCRIPT -->
+    <script is:inline>
 
+      (() => {
+
+        const html = document.documentElement;
+
+        const applyTheme = () => {
+
+          const isLight = html.classList.contains('light');
+
+          document.querySelectorAll('[data-theme-label]').forEach((label) => {
+            label.textContent = isLight ? 'Light' : 'Dark';
+          });
+
+          document.querySelectorAll('[data-theme-icon]').forEach((icon) => {
+            icon.textContent = isLight ? '☀' : '☾';
+          });
+
+        };
+
+        // INIT
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'light') {
+          html.classList.add('light');
+        } else {
+          html.classList.remove('light');
+        }
+
+        applyTheme();
+
+        // CLICK GLOBAL
+        document.addEventListener('click', (e) => {
+
+          const button = e.target.closest('[data-theme-toggle]');
+
+          if (!button) return;
+
+          html.classList.toggle('light');
+
+          localStorage.setItem(
+            'theme',
+            html.classList.contains('light')
+              ? 'light'
+              : 'dark'
+          );
+
+          applyTheme();
+
+        });
+
+      })();
+
+    </script>
+
+  </body>
 </html>

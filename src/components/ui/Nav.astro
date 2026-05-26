@@ -1,67 +1,223 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
+import ThemeToggle from "./ThemeToggle.astro";
 
 const links = [
   {
-    name: 'Proyectos',
-    href: '/projects',
+    name: "Proyectos",
+    href: "/projects",
   },
   {
-    name: 'Sobre mí',
-    href: '/about',
+    name: "Sobre mí",
+    href: "/about",
+  },
+  {
+    name: "Contacto",
+    href: "/contact",
   },
 ];
 ---
 
 <nav
-  class="sticky top-0 z-50 border-b border-[var(--rule)] bg-[color:var(--bg)]/95 backdrop-blur-xl"
+  class="sticky top-0 z-50 border-b border-(--rule) bg-[color:var(--bg)]/95 backdrop-blur-xl"
 >
-
+  <!-- Glow -->
   <div
     class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,transparent,rgba(139,26,26,0.03),transparent)]"
-  ></div>
-
-  <!-- MÁS GRANDE -->
-  <div
-    class="mx-auto flex h-[82px] max-w-[1440px] items-center justify-between px-10"
   >
+  </div>
 
+  <!-- CONTAINER -->
+  <div
+    class="relative mx-auto flex h-20.5 max-w-[1440px] items-center justify-between px-6 md:px-10"
+  >
     <!-- LOGO -->
     <a
       href="/"
-      class="font-display text-[30px] leading-none tracking-[-0.02em] text-[var(--white)]"
+      class="relative z-[1000001] font-display text-[24px] leading-none tracking-[-0.02em] text-(--white) md:text-[30px]"
     >
       <span>JORGE</span>
 
-      <span class="mx-[3px] text-[rgba(139,26,26,0.9)]">
-        .
-      </span>
+      <span class="mx-0.75 text-[rgba(139,26,26,0.9)]">.</span>
 
       <span>SOTO</span>
     </a>
 
-    <!-- RIGHT -->
-    <div class="flex items-center gap-10">
+    <!-- DESKTOP -->
+    <div class="hidden items-center gap-10 md:flex">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="font-mono text-[12px] uppercase tracking-[0.28em] text-[var(--white-muted)] transition duration-300 hover:text-(--white)"
+          >
+            {link.name}
+          </a>
+        ))
+      }
 
-      <!-- LINKS -->
-      <div class="hidden items-center gap-10 md:flex">
+      <div class="relative z-[1000001] pointer-events-auto">
+        <ThemeToggle />
+      </div>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="relative z-[1000001] flex items-center gap-4 md:hidden">
+      <!-- TOGGLE -->
+      <div class="pointer-events-auto">
+        <ThemeToggle />
+      </div>
+
+      <!-- MENU BUTTON -->
+      <button
+        id="menu-open"
+        class="relative z-[1000001] font-mono text-[11px] uppercase tracking-[0.28em] text-[rgba(139,26,26,0.82)]"
+      >
+        MENÚ
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[999999] hidden h-[100svh] w-full bg-[var(--bg)] opacity-0 transition-opacity duration-500 md:hidden"
+>
+  <div class="flex h-[100svh] flex-col overflow-hidden">
+    
+    <!-- TOP -->
+    <div
+      class="flex h-[82px] shrink-0 items-center justify-between border-b border-[var(--rule)] px-6"
+    >
+      <span
+        class="font-mono text-[11px] uppercase tracking-[0.28em] text-[rgba(139,26,26,0.72)]"
+      >
+        MENÚ
+      </span>
+
+      <!-- RIGHT -->
+      <div class="flex items-center gap-4">
+
+        <!-- ESTE ES EL MISMO TOGGLE -->
+        <ThemeToggle />
+
+        <button
+          id="menu-close"
+          class="relative z-[1000001] font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--white-muted)]"
+        >
+          CERRAR
+        </button>
+
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="flex flex-1 flex-col justify-between px-6 py-6">
+      
+      <!-- NAV -->
+      <div class="border-t border-[var(--rule)]">
         {
-          links.map((link) => (
+          links.map((link, index) => (
             <a
               href={link.href}
-              class="font-mono text-[12px] uppercase tracking-[0.28em] text-[var(--white-muted)] transition duration-300 hover:text-[var(--white)]"
+              class="group flex items-center justify-between border-b border-[var(--rule)] py-5"
             >
-              {link.name}
+              <div class="flex items-center gap-4">
+                <span
+                  class="font-mono text-[10px] uppercase tracking-[0.24em] text-[rgba(139,26,26,0.72)]"
+                >
+                  0{index + 1}
+                </span>
+
+                <span
+                  class="font-display text-[clamp(42px,11vw,72px)] leading-[0.9]"
+                >
+                  {link.name}
+                </span>
+              </div>
+
+              <span
+                class="text-[rgba(139,26,26,0.72)] transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
             </a>
           ))
         }
       </div>
 
-      <!-- TOGGLE -->
-      <ThemeToggle />
+      <!-- BOTTOM -->
+      <div>
 
+        <!-- SOCIALS -->
+        <div class="flex justify-center gap-4">
+          <a
+            href="https://github.com/jorgesotowebdesigner"
+            target="_blank"
+            class="flex h-14 w-14 items-center justify-center border border-[var(--rule)] text-[18px] text-[var(--white-muted)] transition-all duration-300 hover:border-[rgba(139,26,26,0.5)] hover:text-[var(--white)]"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/jorge-soto-tapia"
+            target="_blank"
+            class="flex h-14 w-14 items-center justify-center border border-[var(--rule)] text-[18px] text-[var(--white-muted)] transition-all duration-300 hover:border-[rgba(139,26,26,0.5)] hover:text-[var(--white)]"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="https://behance.net/jorgesototapia"
+            target="_blank"
+            class="flex h-14 w-14 items-center justify-center border border-[var(--rule)] text-[18px] text-[var(--white-muted)] transition-all duration-300 hover:border-[rgba(139,26,26,0.5)] hover:text-[var(--white)]"
+          >
+            <i class="fa-brands fa-behance"></i>
+          </a>
+        </div>
+
+        <!-- FOOTER -->
+        <div
+          class="mt-8 border-t border-[var(--rule)] pt-5 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--white-dim)]"
+        >
+          JORGE SOTO · PORTAFOLIO 2026
+        </div>
+
+      </div>
     </div>
-
   </div>
+</div>
 
-</nav>
+<script>
+  const menu = document.getElementById("mobile-menu");
+  const openBtn = document.getElementById("menu-open");
+  const closeBtn = document.getElementById("menu-close");
+
+  if (menu && openBtn && closeBtn) {
+
+    openBtn.addEventListener("click", () => {
+
+      menu.classList.remove("hidden");
+
+      requestAnimationFrame(() => {
+        menu.classList.add("opacity-100");
+      });
+
+      document.body.style.overflow = "hidden";
+
+    });
+
+    closeBtn.addEventListener("click", () => {
+
+      menu.classList.remove("opacity-100");
+
+      setTimeout(() => {
+        menu.classList.add("hidden");
+      }, 500);
+
+      document.body.style.overflow = "";
+
+    });
+
+  }
+</script>

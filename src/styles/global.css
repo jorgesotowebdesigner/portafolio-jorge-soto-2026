@@ -201,6 +201,11 @@ body {
   pointer-events: none;
 }
 
+/* Editorial Kicker */
+.editorial-kicker {
+  color: var(--red-border);
+}
+
 /* GLOBAL SEPARATORS */
 
 .section-line {
@@ -264,45 +269,65 @@ body {
 /* BOTÓN EDITORIAL */
 
 .editorial-button {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 16px;
 
-  width: 170px;
-  height: 52px;
+  border: 1px solid rgba(139, 26, 26, 0.18);
 
-  background: rgba(120, 20, 20, 0.14);
-  border: 1px solid rgba(185, 28, 28, 0.35);
+  background: rgba(139, 26, 26, 0.1);
 
-  color: var(--text);
+  padding: 16px 28px;
 
-  text-decoration: none;
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.42em;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 0.32em;
 
-  clip-path: polygon(0 0, 100% 0, 100% 76%, 92% 100%, 0 100%);
+  color: var(--white);
 
-  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(139, 26, 26, 0.08);
 
   transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+    border-color 300ms ease,
+    background 300ms ease,
+    transform 300ms ease;
 }
 
 .editorial-button:hover {
-  transform: translateY(-2px);
+  border-color: rgba(139, 26, 26, 0.5);
 
-  background: rgba(185, 28, 28, 0.22);
+  background: rgba(139, 26, 26, 0.18);
+}
 
-  border-color: rgba(185, 28, 28, 0.55);
+.editorial-button i {
+  font-size: 11px;
 
-  box-shadow: 0 0 25px rgba(185, 28, 28, 0.18);
+  color: rgba(139, 26, 26, 0.82);
+
+  transition: transform 300ms ease;
+}
+
+.editorial-button:hover i {
+  transform: translateX(4px);
+}
+
+/* LIGHT MODE */
+
+.light .editorial-button {
+  color: #111111;
+
+  background: rgba(139, 26, 26, 0.06);
+
+  border-color: rgba(139, 26, 26, 0.18);
+
+  box-shadow: none;
+}
+
+.light .editorial-button:hover {
+  background: rgba(139, 26, 26, 0.1);
+
+  border-color: rgba(139, 26, 26, 0.3);
 }
 
 /* LIGHT MODE */
@@ -314,6 +339,8 @@ body {
   border: 1px solid rgba(185, 28, 28, 0.18);
 
   color: #161616;
+
+  box-shadow: none;
 }
 
 .light .editorial-button:hover,
