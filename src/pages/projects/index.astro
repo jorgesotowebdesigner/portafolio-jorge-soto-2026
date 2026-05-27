@@ -6,30 +6,34 @@ import projects from "../../data/projects.json";
 <MainLayout title="Proyectos">
 
   <!-- HERO -->
-  <section class="border-b border-[var(--rule)] py-14">
+  <section class="border-b border-[var(--rule)] py-14 md:py-20">
 
-    <div class="mx-auto max-w-[1420px] px-12">
+    <div class="mx-auto max-w-[1420px] px-6 md:px-12">
 
-      <div class="mb-16 flex items-start justify-between gap-20">
+      <div
+        class="grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_0.8fr] md:items-start md:gap-20"
+      >
 
+        <!-- LEFT -->
         <div>
 
           <span
-            class="mb-6 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+            class="mb-6 block font-mono text-[10px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)] md:text-[11px]"
           >
             // 02 · PROYECTOS
           </span>
 
           <h1
-            class="max-w-[980px] font-display text-[clamp(52px,5vw,96px)] uppercase leading-[0.88] tracking-[-0.05em]"
+            class="max-w-[320px] font-display text-[clamp(58px,14vw,96px)] uppercase leading-[0.88] tracking-[-0.05em] md:max-w-[980px] md:text-[clamp(52px,5vw,96px)]"
           >
             Casos de estudio & experiencias web
           </h1>
 
         </div>
 
+        <!-- RIGHT -->
         <p
-          class="max-w-[320px] pt-3 text-[14px] leading-[2] text-[var(--white-muted)]"
+          class="max-w-[320px] text-[18px] leading-[1.9] text-[var(--white-muted)] md:pt-3 md:text-[14px] md:leading-[2]"
         >
           Selección de proyectos enfocados en frontend, diseño UX/UI,
           ecommerce y experiencias digitales modernas utilizando Astro,
@@ -53,24 +57,24 @@ import projects from "../../data/projects.json";
         >
 
           <div
-            class="mx-auto grid max-w-[1600px] lg:grid-cols-[0.78fr_1.22fr]"
+            class="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-[0.78fr_1.22fr]"
           >
 
             <!-- LEFT -->
-            <div class="flex flex-col justify-center px-14 py-16">
+            <div class="flex flex-col justify-center px-6 py-12 md:px-14 md:py-16">
 
               <div>
 
-                <div class="mb-10 flex items-center gap-5">
+                <div class="mb-8 flex items-center gap-5 md:mb-10">
 
                   <span
-                    class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+                    class="font-mono text-[10px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)] md:text-[11px]"
                   >
                     {project.number}
                   </span>
 
                   <span
-                    class="font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--white-muted)]"
+                    class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--white-muted)] md:text-[11px]"
                   >
                     {project.year}
                   </span>
@@ -78,19 +82,19 @@ import projects from "../../data/projects.json";
                 </div>
 
                 <h2
-                  class="mb-8 max-w-[700px] font-serif text-[clamp(42px,3.8vw,74px)] leading-[0.95] tracking-[-0.04em]"
+                  class="mb-6 max-w-[700px] font-serif text-[clamp(42px,11vw,74px)] leading-[0.95] tracking-[-0.04em] md:mb-8 md:text-[clamp(42px,3.8vw,74px)]"
                 >
                   {project.title}
                 </h2>
 
                 <p
-                  class="mb-10 max-w-[620px] text-[16px] leading-[2] text-[var(--white-muted)]"
+                  class="mb-8 max-w-[620px] text-[15px] leading-[1.9] text-[var(--white-muted)] md:mb-10 md:text-[16px] md:leading-[2]"
                 >
                   {project.shortDescription}
                 </p>
 
                 <!-- STACK -->
-                <div class="mb-10 flex flex-wrap items-center gap-3">
+                <div class="mb-8 flex flex-wrap items-center gap-3 md:mb-10">
 
                   {
                     project.stack.map((item, index) => (
@@ -98,7 +102,7 @@ import projects from "../../data/projects.json";
                       <>
 
                         <span
-                          class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--white-muted)]"
+                          class="font-mono text-[9px] uppercase tracking-[0.22em] text-[var(--white-muted)] md:text-[10px]"
                         >
                           {item}
                         </span>
@@ -116,14 +120,14 @@ import projects from "../../data/projects.json";
 
                 </div>
 
-               <a
-            href={`/projects/${project.id}`}
-            class="editorial-button"
-          >
-            <span>Ver proyecto</span>
+                <a
+                  href={`/projects/${project.id}`}
+                  class="editorial-button"
+                >
+                  <span>Ver proyecto</span>
 
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
 
               </div>
 
@@ -131,13 +135,13 @@ import projects from "../../data/projects.json";
 
             <!-- RIGHT -->
             <div
-              class="border-l border-[var(--rule)] bg-[var(--bg2)] p-10"
+              class="border-t border-[var(--rule)] bg-[var(--bg2)] p-4 md:border-l md:border-t-0 md:p-10"
             >
 
               <img
                 src={project.cover}
                 alt={project.title}
-                class="h-[620px] w-full object-cover object-top"
+                class="h-[260px] w-full object-cover object-top md:h-[620px]"
               />
 
             </div>
