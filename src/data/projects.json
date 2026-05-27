@@ -31,11 +31,11 @@
 
     "category": "UX/UI",
 
-    "cover": "/src/assets/projects/san-juan-de-dios/cover.png",
+    "cover": "/projects/san-juan-de-dios/cover.png",
 
     "gallery": [
-      "/src/assets/projects/san-juan-de-dios/preview-1.png",
-      "/src/assets/projects/san-juan-de-dios/preview-2.png"
+      "/projects/san-juan-de-dios/preview-1.png",
+      "/projects/san-juan-de-dios/preview-2.png"
     ],
 
     "url": "#",
@@ -76,4 +76,3 @@
     ]
   }
 ]
-
