@@ -52,7 +52,6 @@
       "Figma",
       "Sistemas de Diseño",
       "Design Tokens",
-      "Prototipado",
       "Motion Design",
       "Tipografía",
       "UX Research",
@@ -65,26 +64,21 @@
       "Tailwind CSS",
       "TypeScript",
       "Next.js",
-      "GSAP",
       "Framer Motion",
-      "Storybook"
+      "WordPress",
+      "Shopify"
     ],
 
     "quality": [
       "Core Web Vitals",
-      "Lighthouse",
-      "WCAG 2.1",
       "Testing",
-      "Git",
-      "CI/CD"
+      "Git"
     ],
 
     "process": [
       "Design Thinking",
-      "Atomic Design",
       "Agile",
       "Documentación",
-      "Handoff",
       "Code Review"
     ]
   },
