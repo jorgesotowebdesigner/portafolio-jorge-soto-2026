@@ -58,7 +58,9 @@ import FinalCTA from "../components/shared/FinalCTA.astro";
 
     <!-- INTRO -->
     <section class="border-b border-[var(--rule)] py-20">
-      <div class="mx-auto grid max-w-[1480px] lg:grid-cols-[36%_64%]">
+      <div
+        class="mx-auto grid max-w-[1480px] gap-10 lg:grid-cols-[36%_64%] lg:gap-0"
+      >
         <!-- LEFT -->
         <div class="border-r border-[var(--rule)] px-8">
           <div class="mb-10">
@@ -74,7 +76,7 @@ import FinalCTA from "../components/shared/FinalCTA.astro";
           </div>
 
           <div class="space-y-5">
-            <div class="grid grid-cols-[120px_1fr]">
+            <div class="grid grid-cols-[140px_1fr] lg:grid-cols-[120px_1fr]">
               <span
                 class="font-mono text-[11px] font-semibold uppercase tracking-[0.32em] text-[rgba(139,26,26,0.95)]"
               >
@@ -88,7 +90,7 @@ import FinalCTA from "../components/shared/FinalCTA.astro";
               </span>
             </div>
 
-            <div class="grid grid-cols-[120px_1fr]">
+            <div class="grid grid-cols-[140px_1fr] lg:grid-cols-[120px_1fr]">
               <span
                 class="font-mono text-[11px] font-semibold uppercase tracking-[0.32em] text-[rgba(139,26,26,0.95)]"
               >
@@ -107,7 +109,7 @@ import FinalCTA from "../components/shared/FinalCTA.astro";
         <!-- RIGHT -->
         <div class="px-10">
           <p
-            class="max-w-[780px] font-serif text-[clamp(30px,3vw,44px)] leading-[1.4] tracking-[-0.03em]"
+            class="max-w-[780px] font-serif text-[26px] leading-[1.25] tracking-[-0.03em] sm:text-[30px] lg:text-[44px]"
           >
             {about.intro.headline}
           </p>

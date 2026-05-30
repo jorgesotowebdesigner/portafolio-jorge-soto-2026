@@ -12,14 +12,10 @@ import projects from "../../data/projects.json";
       >
         <!-- LEFT -->
         <div>
-          <span
-            class="mb-6 block font-mono text-[10px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)] md:text-[11px]"
-          >
-            // 02 · PROYECTOS
-          </span>
+          <span class="mb-6 block editorial-kicker"> // 02 · PROYECTOS </span>
 
           <h1
-            class="max-w-[320px] font-display text-[clamp(58px,14vw,96px)] uppercase leading-[0.88] tracking-[-0.05em] md:max-w-[980px] md:text-[clamp(52px,5vw,96px)]"
+            class="max-w-[500px] font-display text-[clamp(52px,12vw,96px)] uppercase leading-[0.88] tracking-[-0.05em] md:max-w-none md:whitespace-nowrap md:text-[clamp(52px,5vw,96px)]"
           >
             Casos de estudio & experiencias web
           </h1>
@@ -27,7 +23,7 @@ import projects from "../../data/projects.json";
 
         <!-- RIGHT -->
         <p
-          class="max-w-[320px] text-[18px] leading-[1.9] text-[var(--white-muted)] md:pt-3 md:text-[14px] md:leading-[2]"
+          class="max-w-[520px] text-[18px] leading-[1.9] text-[var(--white-muted)] md:max-w-[320px] md:pt-3 md:text-[14px] md:leading-[2]"
         >
           Selección de proyectos enfocados en frontend, diseño UX/UI, ecommerce
           y experiencias digitales modernas utilizando Astro, React, Tailwind,
@@ -42,18 +38,14 @@ import projects from "../../data/projects.json";
     {
       projects.map((project) => (
         <article class="border-b border-[var(--rule)]">
-          <div class="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-[0.78fr_1.22fr]">
+          <div class="mx-auto grid max-w-[1600px] grid-cols-1 lg:grid-cols-[0.72fr_1.28fr]">
             {/* LEFT */}
             <div class="flex flex-col justify-center px-6 py-12 md:px-14 md:py-16">
               <div>
                 <div class="mb-8 flex items-center gap-5 md:mb-10">
-                  <span class="font-mono text-[10px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)] md:text-[11px]">
-                    {project.number}
-                  </span>
+                  <span class="editorial-kicker">{project.number}</span>
 
-                  <span class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--white-muted)] md:text-[11px]">
-                    {project.year}
-                  </span>
+                  <span class="editorial-kicker">{project.year}</span>
                 </div>
 
                 <h2 class="mb-6 max-w-[700px] font-serif text-[clamp(42px,11vw,74px)] leading-[0.95] tracking-[-0.04em] md:mb-8 md:text-[clamp(42px,3.8vw,74px)]">
@@ -89,11 +81,27 @@ import projects from "../../data/projects.json";
 
             {/* RIGHT */}
             <div class="border-t border-[var(--rule)] bg-[var(--bg2)] p-4 md:border-l md:border-t-0 md:p-10">
-              <img
-                src={project.cover}
-                alt={project.title}
-                class="h-[260px] w-full object-cover object-top md:h-[620px]"
-              />
+              <div class="overflow-hidden border border-[var(--rule)] bg-[var(--bg)]">
+                {/* Browser Header */}
+                <div class="flex items-center gap-2 border-b border-[var(--rule)] px-5 py-4">
+                  <span class="h-2.5 w-2.5 rounded-full bg-[rgba(139,26,26,0.8)]" />
+
+                  <span class="h-2.5 w-2.5 rounded-full bg-[rgba(255,255,255,0.18)]" />
+
+                  <span class="h-2.5 w-2.5 rounded-full bg-[rgba(255,255,255,0.18)]" />
+
+                  <div class="ml-4 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--white-dim)]">
+                    Vista previa
+                  </div>
+                </div>
+
+                {/* Screenshot */}
+                <img
+                  src={project.cover}
+                  alt={project.title}
+                  class="w-full transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
             </div>
           </div>
         </article>

@@ -203,7 +203,15 @@ body {
 
 /* Editorial Kicker */
 .editorial-kicker {
-  color: var(--red-border);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  color: rgba(139, 26, 26, 1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* GLOBAL SEPARATORS */
