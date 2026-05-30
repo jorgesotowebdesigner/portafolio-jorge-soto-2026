@@ -1,75 +1,201 @@
----
-const {
-  section = "// CONTACTO",
-  title,
-  italic,
-  description,
-  primaryText = "Hablemos",
-  primaryHref = "mailto:correo@email.com",
-  secondaryText = "GitHub ↗",
-  secondaryHref = "https://github.com",
-  backgroundWord = "HABLEMOS"
-} = Astro.props;
----
+<!-- CONTACT CTA -->
+<section class="relative overflow-hidden border-b border-[var(--rule)] py-24">
+  <!-- Background -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      class="absolute bottom-[-180px] left-[-120px] h-[520px] w-[520px] rounded-full bg-[rgba(139,26,26,0.08)] blur-[160px]"
+    >
+    </div>
 
-<section class="relative overflow-hidden border-t border-[var(--rule)] py-32">
-
-  <!-- BG WORD -->
-  <div
-    class="pointer-events-none absolute bottom-[-80px] left-0 font-display text-[260px] leading-none tracking-[-0.06em] text-[rgba(139,26,26,0.08)]"
-  >
-    {backgroundWord}
+    <div
+      class="absolute bottom-[-40px] left-0 select-none font-display text-[min(340px,24vw)] leading-none tracking-[0.02em] text-[rgba(139,26,26,0.12)]"
+    >
+      HABLEMOS
+    </div>
   </div>
 
   <div class="mx-auto max-w-[1480px] px-8">
-
-    <span
-      class="mb-8 block font-mono text-[11px] uppercase tracking-[0.22em] text-[rgba(139,26,26,0.72)]"
-    >
-      {section}
-    </span>
-
-    <h2
-      class="max-w-[980px] font-serif text-[clamp(64px,7vw,130px)] leading-[0.88] tracking-[-0.06em]"
-    >
-      {title}
-
-      {
-        italic && (
-          <span class="italic text-[var(--white-dim)]">
-            {" "}
-            {italic}
-          </span>
-        )
-      }
-    </h2>
-
-    <p
-      class="mt-10 max-w-[620px] text-[18px] leading-[2] text-[var(--white-muted)]"
-    >
-      {description}
-    </p>
-
-    <!-- BUTTONS -->
-    <div class="mt-14 flex flex-wrap gap-5">
-
-      <a
-        href={primaryHref}
-        class="editorial-button"
+    <!-- HEADER -->
+    <div class="mb-14 flex items-end gap-5">
+      <span
+        class="font-mono text-[14px] font-semibold uppercase tracking-[0.32em] text-[rgba(139,26,26,0.95)]"
       >
-        {primaryText}
-      </a>
+        // 07
+      </span>
 
-      <a
-        href={secondaryHref}
-        target="_blank"
-        class="editorial-button"
+      <h2
+        class="font-display text-[clamp(44px,6vw,82px)] leading-none tracking-[0.04em]"
       >
-        {secondaryText}
-      </a>
+        CONTACTO
+      </h2>
 
+      <div class="mb-2 h-px flex-1 bg-[var(--rule)]"></div>
     </div>
 
-  </div>
+    <!-- TOP -->
+    <div class="mb-16 grid items-end gap-16 lg:grid-cols-[1fr_520px]">
+      <!-- LEFT -->
+      <div>
+        <h3
+          class="max-w-[760px] font-serif text-[clamp(56px,7.2vw,120px)] leading-[0.86] tracking-[-0.05em]"
+        >
+          ¿Tienes un proyecto
 
+          <span class="block italic text-[var(--white-muted)]">
+            que vale la pena
+          </span>
+
+          construir?
+        </h3>
+
+        <p
+          class="mt-8 max-w-[520px] text-[15px] leading-[2] text-[var(--white-muted)]"
+        >
+          Estoy disponible para proyectos freelance, colaboraciones y
+          conversaciones que vayan en serio.
+        </p>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="grid border border-[var(--rule)] bg-[var(--bg2)]">
+        <!-- EMAIL -->
+        <a
+          href="mailto:jorgesoto.webdesigner@gmail.com"
+          class="group relative overflow-hidden border-b border-[var(--rule)] p-10 transition-all duration-500 hover:bg-[rgba(139,26,26,0.04)]"
+        >
+          <div
+            class="absolute bottom-[-18px] right-5 font-display text-[120px] leading-none text-[rgba(139,26,26,0.08)]"
+          >
+            01
+          </div>
+
+          <div class="mb-10 flex items-center justify-between">
+            <div
+              class="flex h-14 w-14 items-center justify-center border border-[rgba(139,26,26,0.25)] text-[rgba(139,26,26,0.85)]"
+            >
+              <i class="fa-regular fa-envelope text-[18px]"></i>
+            </div>
+
+            <span
+              class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--white-dim)]"
+            >
+              Email Directo
+            </span>
+          </div>
+
+          <div class="mb-8 h-px w-full bg-[var(--rule)]"></div>
+
+          <h4
+            class="overflow-hidden text-ellipsis whitespace-nowrap font-serif text-[clamp(16px,1.25vw,28px)] leading-[2.00] tracking-[-0.03em] text-[var(--white)]"
+          >
+            jorgesoto.webdesigner@gmail.com
+          </h4>
+
+          <div
+            class="mt-6 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-[rgba(139,26,26,0.85)]"
+          >
+            <span>Escribir ahora</span>
+
+            <span
+              class="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </div>
+        </a>
+
+        <!-- LINKEDIN -->
+        <a
+          href="https://www.linkedin.com/in/jorge-soto-tapia/"
+          target="_blank"
+          class="group relative overflow-hidden p-10 transition-all duration-500 hover:bg-[rgba(139,26,26,0.04)]"
+        >
+          <div
+            class="absolute bottom-[-18px] right-5 font-display text-[120px] leading-none text-[rgba(139,26,26,0.08)]"
+          >
+            02
+          </div>
+
+          <div class="mb-10 flex items-center justify-between">
+            <div
+              class="flex h-14 w-14 items-center justify-center border border-[rgba(139,26,26,0.25)] text-[rgba(139,26,26,0.85)]"
+            >
+              <i class="fa-brands fa-linkedin-in text-[18px]"></i>
+            </div>
+
+            <span
+              class="font-mono text-[10px] uppercase tracking-[0.32em] text-[var(--white-dim)]"
+            >
+              LinkedIn
+            </span>
+          </div>
+
+          <div class="mb-8 h-px w-full bg-[var(--rule)]"></div>
+
+          <h4
+            class="overflow-hidden text-ellipsis whitespace-nowrap font-serif text-[clamp(22px,1.6vw,38px)] leading-[0.95] tracking-[-0.03em] text-[var(--white)]"
+          >
+            in/jorge-soto-tapia
+          </h4>
+
+          <div
+            class="mt-6 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.28em] text-[rgba(139,26,26,0.85)]"
+          >
+            <span>Ver perfil</span>
+
+            <span
+              class="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- BOTTOM -->
+    <div
+      class="flex flex-col items-center justify-between gap-8 border-t border-[var(--rule)] pt-10 lg:flex-row"
+    >
+      <div class="flex items-center gap-8">
+        <span
+          class="font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--white-dim)]"
+        >
+          También en
+        </span>
+
+        <div class="flex items-center gap-8">
+          <a
+            href="https://github.com/jorgesotowebdesigner"
+            target="_blank"
+            class="group flex items-center gap-3 text-[var(--white-muted)] transition-colors duration-300 hover:text-[var(--white)]"
+          >
+            <i class="fa-brands fa-github text-[15px]"></i>
+
+            <span class="font-mono text-[11px] uppercase tracking-[0.22em]">
+              /jorgesotowebdesigner
+            </span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/il_giorgio_/"
+            target="_blank"
+            class="group flex items-center gap-3 text-[var(--white-muted)] transition-colors duration-300 hover:text-[var(--white)]"
+          >
+            <i class="fa-brands fa-instagram text-[15px]"></i>
+
+            <span class="font-mono text-[11px] uppercase tracking-[0.22em]">
+              /il_giorgio_
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="font-mono text-[10px] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.22)]"
+      >
+        Jorge Soto · Portafolio 2026 · Viña del Mar, CL
+      </div>
+    </div>
+  </div>
 </section>

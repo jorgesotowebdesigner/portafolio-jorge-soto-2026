@@ -1,19 +1,18 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 
-import Hero from '../components/home/Hero.astro';
-import Projects from '../components/home/ProjectsPreview.astro';
-import Timeline from '../components/home/Timeline.astro';
-import Interests from '../components/home/Interests.astro';
-import ContactCTA from '../components/home/ContactCTA.astro';
+import Hero from "../components/home/Hero.astro";
+import Projects from "../components/home/ProjectsPreview.astro";
+import Timeline from "../components/home/Timeline.astro";
+import Interests from "../components/home/Interests.astro";
+import ContactCTA from "../components/home/ContactCTA.astro";
 ---
 
 <MainLayout title="Jorge Soto">
-
-  <div class="bg-[var(--bg)] text-[var(--white)] transition-colors duration-500">
-
+  <div
+    class="bg-[var(--bg)] text-[var(--white)] transition-colors duration-500"
+  >
     <main>
-
       <Hero />
 
       <Projects />
@@ -23,9 +22,6 @@ import ContactCTA from '../components/home/ContactCTA.astro';
       <Interests />
 
       <ContactCTA />
-
     </main>
-
   </div>
-
 </MainLayout>

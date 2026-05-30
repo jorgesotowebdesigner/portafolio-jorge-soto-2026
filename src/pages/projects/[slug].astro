@@ -3,45 +3,36 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import projects from "../../data/projects.json";
 
 export async function getStaticPaths() {
-
   return projects.map((project) => ({
-
     params: {
-      slug: project.id
+      slug: project.id,
     },
 
     props: {
-      project
-    }
-
+      project,
+    },
   }));
-
 }
 
 const { project } = Astro.props;
 ---
 
 <MainLayout title={project.title}>
-
   <!-- HERO -->
   <section class="border-b border-[var(--rule)] py-24">
-
     <div class="mx-auto max-w-[1480px] px-12">
-
       <div class="mb-12 flex items-center gap-5">
-
         <span
-          class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+          class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
         >
           {project.year}
         </span>
 
         <span
-          class="font-mono text-[11px] uppercase tracking-[0.32em] text-[var(--white-muted)]"
+          class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em]"
         >
           {project.agency}
         </span>
-
       </div>
 
       <h1
@@ -55,30 +46,24 @@ const { project } = Astro.props;
       >
         {project.description}
       </p>
-
     </div>
-
   </section>
 
   <!-- COVER -->
   <section class="border-b border-[var(--rule)]">
-
-    <img
-      src={project.cover}
-      alt={project.title}
-      class="h-auto w-full"
-    />
-
+    <img src={project.cover} alt={project.title} class="h-auto w-full" />
   </section>
 
   <!-- OVERVIEW -->
   <section class="border-b border-[var(--rule)] py-24">
-
-    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
-
+    <div
+      class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]"
+    >
       <span
-        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
+
         Resumen
       </span>
 
@@ -87,55 +72,48 @@ const { project } = Astro.props;
       >
         {project.overview}
       </p>
-
     </div>
-
   </section>
 
   <!-- CHALLENGE -->
   <section class="border-b border-[var(--rule)] py-24">
-
-    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
-
+    <div
+      class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]"
+    >
       <span
-        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
+
         Desafío
       </span>
 
       <div class="space-y-8">
-
         {
           project.challenge.map((item) => (
-
-            <p
-              class="max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
-            >
+            <p class="max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]">
               {item}
             </p>
-
           ))
         }
-
       </div>
-
     </div>
-
   </section>
 
   <!-- ROLE -->
   <section class="border-b border-[var(--rule)] py-24">
-
-    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
-
+    <div
+      class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]"
+    >
       <span
-        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
-        Mi Rol
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
+
+        Mi rol
       </span>
 
       <div>
-
         <p
           class="mb-10 max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
         >
@@ -143,239 +121,165 @@ const { project } = Astro.props;
         </p>
 
         <div class="flex flex-wrap items-center gap-3">
-
           {
             project.stack.map((item, index) => (
-
               <>
-
-                <span
-                  class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--white-muted)]"
-                >
+                <span class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--white-muted)]">
                   {item}
                 </span>
 
-                {
-                  index < project.stack.length - 1 && (
-                    <span class="text-[rgba(139,26,26,0.5)]">·</span>
-                  )
-                }
-
+                {index < project.stack.length - 1 && (
+                  <span class="text-[rgba(139,26,26,0.5)]">·</span>
+                )}
               </>
-
             ))
           }
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-<!-- PROCESS -->
-<section class="border-b border-[var(--rule)] py-32">
+  <!-- PROCESS -->
+  <section class="border-b border-[var(--rule)] py-32">
+    <div class="mx-auto max-w-[1480px] px-12">
+      <span
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
+      >
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
 
-  <div class="mx-auto max-w-[1480px] px-12">
+        Proceso
+      </span>
 
-    <span
-      class="mb-20 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
-    >
-      Proceso
-    </span>
+      <div class="relative mx-auto max-w-[980px] border-l border-[var(--rule)]">
+        {
+          project.process.map((step, index) => (
+            <div class="group relative grid gap-6 py-16 pl-16 transition-all duration-500 hover:bg-[rgba(139,26,26,0.02)]">
+              {/* DOT */}
+              <div class="absolute left-[-7px] top-[74px] h-[14px] w-[14px] rounded-full border border-[rgba(139,26,26,0.6)] bg-[var(--bg)] transition-all duration-300 group-hover:scale-125 group-hover:bg-[rgba(139,26,26,0.8)]" />
 
-    <div class="relative mx-auto max-w-[980px] border-l border-[var(--rule)]">
+              {/* NUMBER */}
+              <span class="font-mono text-[11px] uppercase tracking-[0.3em] text-[rgba(139,26,26,0.75)]">
+                0{index + 1}
+              </span>
 
-      {
-        project.process.map((step, index) => (
+              {/* CONTENT */}
+              <div>
+                <h3 class="mb-4 font-serif text-[clamp(30px,2.5vw,54px)] leading-[0.95] tracking-[-0.04em]">
+                  {step}
+                </h3>
 
-          <div
-            class="group relative grid gap-6 py-16 pl-16 transition-all duration-500 hover:bg-[rgba(139,26,26,0.02)]"
-          >
+                <p class="max-w-[620px] text-[16px] leading-[2] text-[var(--white-muted)]">
+                  {index === 0 &&
+                    "Investigación inicial junto a la institución, reuniones, entrevistas y levantamiento de información para comprender las necesidades reales del proyecto."}
 
-            <!-- DOT -->
-            <div
-              class="absolute left-[-7px] top-[74px] h-[14px] w-[14px] rounded-full border border-[rgba(139,26,26,0.6)] bg-[var(--bg)] transition-all duration-300 group-hover:scale-125 group-hover:bg-[rgba(139,26,26,0.8)]"
-            ></div>
+                  {index === 1 &&
+                    "Creación de wireframes y estructura de navegación enfocada en accesibilidad y claridad de contenido."}
 
-            <!-- NUMBER -->
-            <span
-              class="font-mono text-[11px] uppercase tracking-[0.3em] text-[rgba(139,26,26,0.75)]"
-            >
-              0{index + 1}
-            </span>
+                  {index === 2 &&
+                    "Diseño visual de interfaces utilizando una estética institucional, accesible y centrada en usuarios reales."}
 
-            <!-- CONTENT -->
-            <div>
+                  {index === 3 &&
+                    "Desarrollo frontend y construcción de componentes adaptados a distintos dispositivos."}
 
-              <h3
-                class="mb-4 font-serif text-[clamp(30px,2.5vw,54px)] leading-[0.95] tracking-[-0.04em]"
-              >
-                {step}
-              </h3>
+                  {index === 4 &&
+                    "Implementación del CMS en WordPress para facilitar la administración de contenido."}
 
-              <p
-                class="max-w-[620px] text-[16px] leading-[2] text-[var(--white-muted)]"
-              >
-                {
-                  index === 0 &&
-                  "Investigación inicial junto a la institución, reuniones, entrevistas y levantamiento de información para comprender las necesidades reales del proyecto."
-                }
+                  {index === 5 &&
+                    "Pruebas responsive y validación visual en distintos tamaños de pantalla."}
 
-                {
-                  index === 1 &&
-                  "Creación de wireframes y estructura de navegación enfocada en accesibilidad y claridad de contenido."
-                }
-
-                {
-                  index === 2 &&
-                  "Diseño visual de interfaces utilizando una estética institucional, accesible y centrada en usuarios reales."
-                }
-
-                {
-                  index === 3 &&
-                  "Desarrollo frontend y construcción de componentes adaptados a distintos dispositivos."
-                }
-
-                {
-                  index === 4 &&
-                  "Implementación del CMS en WordPress para facilitar la administración de contenido."
-                }
-
-                {
-                  index === 5 &&
-                  "Pruebas responsive y validación visual en distintos tamaños de pantalla."
-                }
-
-                {
-                  index === 6 &&
-                  "Publicación final del sitio y entrega del proyecto."
-                }
-
-              </p>
-
+                  {index === 6 &&
+                    "Publicación final del sitio y entrega del proyecto."}
+                </p>
+              </div>
             </div>
-
-          </div>
-
-        ))
-      }
-
+          ))
+        }
+      </div>
     </div>
-
-  </div>
-
-</section>
+  </section>
 
   <!-- RESULT -->
   <section class="border-b border-[var(--rule)] py-24">
-
-    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
-
+    <div
+      class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]"
+    >
       <span
-        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
+
         Resultado
       </span>
 
       <div>
-
         <p
           class="mb-10 max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
         >
           {project.result}
         </p>
 
-        <a
-          href={project.url}
-          target="_blank"
-          class="editorial-button"
-        >
-
+        <a href={project.url} target="_blank" class="editorial-button">
           Visitar sitio
 
-          <span>
-            ↗
-          </span>
-
+          <span> ↗ </span>
         </a>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- LEARNINGS -->
   <section class="border-b border-[var(--rule)] py-24">
-
-    <div class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]">
-
+    <div
+      class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]"
+    >
       <span
-        class="font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
+
         Aprendizajes
       </span>
 
       <div class="space-y-8">
-
         {
           project.learnings.map((item) => (
-
-            <p
-              class="max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]"
-            >
+            <p class="max-w-[900px] text-[17px] leading-[2] text-[var(--white-muted)]">
               {item}
             </p>
-
           ))
         }
-
       </div>
-
     </div>
-
   </section>
 
   <!-- GALLERY -->
   <section class="border-b border-[var(--rule)] py-24">
-
-    <div class="mx-auto max-w-[1480px] px-12">
-
+    <div
+      class="mx-auto grid max-w-[1480px] gap-24 px-12 lg:grid-cols-[0.5fr_1fr]"
+    >
       <span
-        class="mb-16 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="flex items-center gap-4 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
+        <span class="h-px w-8 bg-[rgba(139,26,26,0.7)]"></span>
+
         Galería
       </span>
 
       <div class="grid gap-10 lg:grid-cols-2">
-
         {
           project.gallery.map((image) => (
-
-            <img
-              src={image}
-              alt={project.title}
-              class="w-full object-cover"
-            />
-
+            <img src={image} alt={project.title} class="w-full object-cover" />
           ))
         }
-
       </div>
-
     </div>
-
   </section>
 
   <!-- CTA -->
   <section class="py-32">
-
     <div class="mx-auto max-w-[1100px] px-12 text-center">
-
       <span
-        class="mb-6 block font-mono text-[11px] uppercase tracking-[0.32em] text-[rgba(139,26,26,0.8)]"
+        class="mb-6 block font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
       >
         ¡Colaboremos!
       </span>
@@ -386,21 +290,11 @@ const { project } = Astro.props;
         {project.cta}
       </h2>
 
-      <a
-        href="/#contact"
-        class="editorial-button"
-      >
-
+      <a href="/#contact" class="editorial-button">
         Hablemos
 
-        <span>
-          ↗
-        </span>
-
+        <span> ↗ </span>
       </a>
-
     </div>
-
   </section>
-
 </MainLayout>

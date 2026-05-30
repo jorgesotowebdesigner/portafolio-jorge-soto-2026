@@ -23,7 +23,6 @@ const { title = "Jorge Soto" } = Astro.props;
   </head>
 
   <body class="antialiased">
-    
     <!-- NAVBAR -->
     <Nav />
 
@@ -34,59 +33,48 @@ const { title = "Jorge Soto" } = Astro.props;
 
     <!-- GLOBAL THEME SCRIPT -->
     <script is:inline>
-
       (() => {
-
         const html = document.documentElement;
 
         const applyTheme = () => {
+          const isLight = html.classList.contains("light");
 
-          const isLight = html.classList.contains('light');
-
-          document.querySelectorAll('[data-theme-label]').forEach((label) => {
-            label.textContent = isLight ? 'Light' : 'Dark';
+          document.querySelectorAll("[data-theme-label]").forEach((label) => {
+            label.textContent = isLight ? "Light" : "Dark";
           });
 
-          document.querySelectorAll('[data-theme-icon]').forEach((icon) => {
-            icon.textContent = isLight ? '☀' : '☾';
+          document.querySelectorAll("[data-theme-icon]").forEach((icon) => {
+            icon.textContent = isLight ? "☀" : "☾";
           });
-
         };
 
         // INIT
-        const savedTheme = localStorage.getItem('theme');
+        const savedTheme = localStorage.getItem("theme");
 
-        if (savedTheme === 'light') {
-          html.classList.add('light');
+        if (savedTheme === "light") {
+          html.classList.add("light");
         } else {
-          html.classList.remove('light');
+          html.classList.remove("light");
         }
 
         applyTheme();
 
         // CLICK GLOBAL
-        document.addEventListener('click', (e) => {
-
-          const button = e.target.closest('[data-theme-toggle]');
+        document.addEventListener("click", (e) => {
+          const button = e.target.closest("[data-theme-toggle]");
 
           if (!button) return;
 
-          html.classList.toggle('light');
+          html.classList.toggle("light");
 
           localStorage.setItem(
-            'theme',
-            html.classList.contains('light')
-              ? 'light'
-              : 'dark'
+            "theme",
+            html.classList.contains("light") ? "light" : "dark",
           );
 
           applyTheme();
-
         });
-
       })();
-
     </script>
-
   </body>
 </html>

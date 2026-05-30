@@ -84,7 +84,6 @@ const links = [
   class="fixed inset-0 z-[999999] hidden h-[100svh] w-full bg-[var(--bg)] opacity-0 transition-opacity duration-500 md:hidden"
 >
   <div class="flex h-[100svh] flex-col overflow-hidden">
-    
     <!-- TOP -->
     <div
       class="flex h-[82px] shrink-0 items-center justify-between border-b border-[var(--rule)] px-6"
@@ -97,7 +96,6 @@ const links = [
 
       <!-- RIGHT -->
       <div class="flex items-center gap-4">
-
         <!-- ESTE ES EL MISMO TOGGLE -->
         <ThemeToggle />
 
@@ -107,13 +105,11 @@ const links = [
         >
           CERRAR
         </button>
-
       </div>
     </div>
 
     <!-- CONTENT -->
     <div class="flex flex-1 flex-col justify-between px-6 py-6">
-      
       <!-- NAV -->
       <div class="border-t border-[var(--rule)]">
         {
@@ -123,22 +119,16 @@ const links = [
               class="group flex items-center justify-between border-b border-[var(--rule)] py-5"
             >
               <div class="flex items-center gap-4">
-                <span
-                  class="font-mono text-[10px] uppercase tracking-[0.24em] text-[rgba(139,26,26,0.72)]"
-                >
+                <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-[rgba(139,26,26,0.72)]">
                   0{index + 1}
                 </span>
 
-                <span
-                  class="font-display text-[clamp(42px,11vw,72px)] leading-[0.9]"
-                >
+                <span class="font-display text-[clamp(42px,11vw,72px)] leading-[0.9]">
                   {link.name}
                 </span>
               </div>
 
-              <span
-                class="text-[rgba(139,26,26,0.72)] transition-transform duration-300 group-hover:translate-x-1"
-              >
+              <span class="text-[rgba(139,26,26,0.72)] transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </a>
@@ -148,7 +138,6 @@ const links = [
 
       <!-- BOTTOM -->
       <div>
-
         <!-- SOCIALS -->
         <div class="flex justify-center gap-4">
           <a
@@ -182,7 +171,6 @@ const links = [
         >
           JORGE SOTO · PORTAFOLIO 2026
         </div>
-
       </div>
     </div>
   </div>
@@ -194,9 +182,7 @@ const links = [
   const closeBtn = document.getElementById("menu-close");
 
   if (menu && openBtn && closeBtn) {
-
     openBtn.addEventListener("click", () => {
-
       menu.classList.remove("hidden");
 
       requestAnimationFrame(() => {
@@ -204,11 +190,9 @@ const links = [
       });
 
       document.body.style.overflow = "hidden";
-
     });
 
     closeBtn.addEventListener("click", () => {
-
       menu.classList.remove("opacity-100");
 
       setTimeout(() => {
@@ -216,8 +200,6 @@ const links = [
       }, 500);
 
       document.body.style.overflow = "";
-
     });
-
   }
 </script>
