@@ -1,4 +1,6 @@
 <section
+  data-reveal
+  data-reveal-delay="1"
   class="relative w-full min-h-[calc(100vh/1.12)] overflow-hidden bg-[var(--bg)] text-[var(--text)]"
 >
   <!-- Glow -->
@@ -6,37 +8,22 @@
 
   <!-- Huge Background Text -->
   <div
-    class="pointer-events-none absolute right-[-10vw] top-[2vw] select-none font-display text-[42vw] leading-none tracking-[0.04em] text-[rgba(139,26,26,0.08)] lg:right-[-1vw] lg:top-[-1vw] lg:text-[min(320px,30vw)]"
+    class="hero-bg-word pointer-events-none absolute right-[-10vw] top-[2vw] select-none font-display text-[42vw] leading-none tracking-[0.04em] text-[rgba(139,26,26,0.08)] lg:right-[-1vw] lg:top-[-1vw] lg:text-[min(320px,30vw)]"
   >
     SOTO
   </div>
 
   <!-- Speed Lines -->
   <div class="speed-lines">
-    <svg viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid slice">
-      <line
-        x1="0"
-        y1="620"
-        x2="1200"
-        y2="40"
-        stroke="rgba(139,26,26,0.08)"
-        stroke-width="1"></line>
+    <svg viewBox="0 0 1200 720" preserveAspectRatio="none">
+      <line class="speed-line speed-line-1" x1="0" y1="620" x2="1200" y2="40"
+      ></line>
 
-      <line
-        x1="0"
-        y1="720"
-        x2="1200"
-        y2="180"
-        stroke="rgba(255,255,255,0.03)"
-        stroke-width="0.5"></line>
+      <line class="speed-line speed-line-2" x1="0" y1="720" x2="1200" y2="180"
+      ></line>
 
-      <line
-        x1="0"
-        y1="520"
-        x2="900"
-        y2="0"
-        stroke="rgba(139,26,26,0.06)"
-        stroke-width="0.5"></line>
+      <line class="speed-line speed-line-3" x1="0" y1="520" x2="900" y2="0"
+      ></line>
     </svg>
   </div>
 
@@ -55,14 +42,18 @@
       class="flex flex-col gap-10 border-b border-[var(--rule)] px-6 py-12 lg:justify-between lg:border-b-0 lg:border-r lg:px-8 lg:py-12"
     >
       <!-- Logo -->
-      <div class="relative h-20 w-20 cursor-pointer lg:h-24 lg:w-24">
+      <div
+        class="hero-logo relative h-20 w-20 cursor-pointer lg:h-24 lg:w-24"
+        data-reveal
+        data-reveal-delay="2"
+      >
         <div
-          class="editorial-panel absolute inset-[4px_-4px_-4px_4px] z-[1] bg-[rgba(139,26,26,0.28)]"
+          class="hero-logo-shadow editorial-panel absolute inset-[4px_-4px_-4px_4px] z-[1] bg-[rgba(139,26,26,0.28)]"
         >
         </div>
 
         <div
-          class="editorial-panel relative z-[2] flex h-20 w-20 items-center justify-center border border-[rgba(139,26,26,0.5)] bg-[rgba(139,26,26,0.16)] font-serif text-4xl font-bold text-[var(--white)] lg:h-24 lg:w-24"
+          class="hero-logo-main editorial-panel relative z-[2] flex h-20 w-20 items-center justify-center border border-[rgba(139,26,26,0.5)] bg-[rgba(139,26,26,0.16)] font-serif text-4xl font-bold text-[var(--white)] lg:h-24 lg:w-24"
         >
           JS
         </div>
@@ -73,7 +64,7 @@
         <div
           class="mb-5 flex items-center gap-3 font-mono text-[13px] font-semibold uppercase tracking-[0.42em] text-[rgba(139,26,26,1)]"
         >
-          <div class="editorial-kicker"></div>
+          <div class="editorial-kicker" data-reveal data-reveal-delay="3"></div>
 
           Diseñador · Dev
         </div>
@@ -95,7 +86,8 @@
         <div
           class="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--white-muted)]"
         >
-          <div class="h-[7px] w-[7px] rounded-full bg-[#5a9d5a]"></div>
+          <div class="status-dot h-[7px] w-[7px] rounded-full bg-[#5a9d5a]">
+          </div>
 
           Disponible para proyectos
         </div>
@@ -120,6 +112,7 @@
 
         <!-- Main Title -->
         <h1
+          data-reveal-title
           class="max-w-[1180px] font-serif text-[clamp(54px,14vw,128px)] leading-[0.92] tracking-[-0.055em] text-[var(--white)] lg:text-[clamp(72px,5.9vw,128px)] lg:leading-[0.9]"
         >
           Diseño y desarrollo interfaces digitales

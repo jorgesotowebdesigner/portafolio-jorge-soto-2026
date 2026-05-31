@@ -36,6 +36,7 @@ const { project } = Astro.props;
       </div>
 
       <h1
+        data-reveal-title
         class="mb-10 max-w-[1200px] font-serif text-[clamp(60px,7vw,140px)] leading-[0.9] tracking-[-0.05em]"
       >
         {project.title}
@@ -51,7 +52,12 @@ const { project } = Astro.props;
 
   <!-- COVER -->
   <section class="border-b border-[var(--rule)]">
-    <img src={project.cover} alt={project.title} class="h-auto w-full" />
+    <img
+      data-reveal-image
+      src={project.cover}
+      alt={project.title}
+      class="h-auto w-full"
+    />
   </section>
 
   <!-- OVERVIEW -->
@@ -164,7 +170,10 @@ const { project } = Astro.props;
 
               {/* CONTENT */}
               <div>
-                <h3 class="mb-4 font-serif text-[clamp(30px,2.5vw,54px)] leading-[0.95] tracking-[-0.04em]">
+                <h3
+                  data-reveal-title
+                  class="mb-4 font-serif text-[clamp(30px,2.5vw,54px)] leading-[0.95] tracking-[-0.04em]"
+                >
                   {step}
                 </h3>
 
@@ -268,7 +277,12 @@ const { project } = Astro.props;
       <div class="grid gap-10 lg:grid-cols-2">
         {
           project.gallery.map((image) => (
-            <img src={image} alt={project.title} class="w-full object-cover" />
+            <img
+              data-reveal-image
+              src={image}
+              alt={project.title}
+              class="w-full object-cover"
+            />
           ))
         }
       </div>
@@ -285,6 +299,7 @@ const { project } = Astro.props;
       </span>
 
       <h2
+        data-reveal-title
         class="mb-10 font-serif text-[clamp(44px,5vw,96px)] leading-[0.95] tracking-[-0.05em]"
       >
         {project.cta}

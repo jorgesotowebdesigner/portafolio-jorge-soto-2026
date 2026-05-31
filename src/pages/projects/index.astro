@@ -15,6 +15,7 @@ import projects from "../../data/projects.json";
           <span class="mb-6 block editorial-kicker"> // 02 · PROYECTOS </span>
 
           <h1
+            data-reveal-title
             class="max-w-[500px] font-display text-[clamp(52px,12vw,96px)] uppercase leading-[0.88] tracking-[-0.05em] md:max-w-none md:whitespace-nowrap md:text-[clamp(52px,5vw,96px)]"
           >
             Casos de estudio & experiencias web
@@ -48,7 +49,10 @@ import projects from "../../data/projects.json";
                   <span class="editorial-kicker">{project.year}</span>
                 </div>
 
-                <h2 class="mb-6 max-w-[700px] font-serif text-[clamp(42px,11vw,74px)] leading-[0.95] tracking-[-0.04em] md:mb-8 md:text-[clamp(42px,3.8vw,74px)]">
+                <h2
+                  data-reveal-title
+                  class="mb-6 max-w-[700px] font-serif text-[clamp(42px,11vw,74px)] leading-[0.95] tracking-[-0.04em] md:mb-8 md:text-[clamp(42px,3.8vw,74px)]"
+                >
                   {project.title}
                 </h2>
 
@@ -97,6 +101,7 @@ import projects from "../../data/projects.json";
 
                 {/* Screenshot */}
                 <img
+                  data-reveal-image
                   src={project.cover}
                   alt={project.title}
                   class="w-full transition-transform duration-700 group-hover:scale-[1.02]"

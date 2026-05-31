@@ -1,0 +1,74 @@
+<script>
+  import { animate, inView } from "motion";
+
+  /* Secciones */
+  inView("[data-reveal]", (element) => {
+    const delay = Number(element.getAttribute("data-reveal-delay") || 0) * 0.15;
+
+    animate(
+      element,
+      {
+        opacity: [0, 1],
+        y: [60, 0],
+      },
+      {
+        duration: 1,
+        delay,
+        easing: [0.22, 1, 0.36, 1],
+      },
+    );
+  });
+
+  /* Imágenes */
+  inView("[data-reveal-image]", (element) => {
+    const delay = Number(element.getAttribute("data-reveal-delay") || 0) * 0.15;
+
+    animate(
+      element,
+      {
+        opacity: [0, 1],
+        scale: [0.96, 1],
+      },
+      {
+        duration: 1.2,
+        delay,
+        easing: [0.22, 1, 0.36, 1],
+      },
+    );
+  });
+
+  /* Navbar */
+  const nav = document.querySelector("[data-reveal-nav]");
+
+  if (nav) {
+    animate(
+      nav,
+      {
+        opacity: [0, 1],
+        transform: ["translateY(-20px)", "translateY(0px)"],
+      },
+      {
+        duration: 0.8,
+        easing: [0.22, 1, 0.36, 1],
+      },
+    );
+  }
+
+  /* Títulos */
+  inView("[data-reveal-title]", (element) => {
+    const delay = Number(element.getAttribute("data-reveal-delay") || 0) * 0.15;
+
+    animate(
+      element,
+      {
+        opacity: [0, 1],
+        y: [80, 0],
+      },
+      {
+        duration: 1.2,
+        delay,
+        easing: [0.22, 1, 0.36, 1],
+      },
+    );
+  });
+</script>

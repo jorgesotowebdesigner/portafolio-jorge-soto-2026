@@ -124,6 +124,7 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 2;
 }
 
 .speed-lines svg {
@@ -360,56 +361,6 @@ body {
   box-shadow: 0 0 18px rgba(185, 28, 28, 0.08);
 }
 
-/* LINK GITHUB HERO */
-
-.hero-github {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-
-  color: var(--text);
-
-  text-decoration: none;
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-
-.hero-github::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-
-  width: 0%;
-  height: 1px;
-
-  background: rgba(139, 26, 26, 0.65);
-
-  transition: width 0.3s ease;
-}
-
-.hero-github:hover {
-  transform: translateX(3px);
-
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.hero-github:hover::after {
-  width: 100%;
-}
-
 /* LIGHT MODE */
 
 .light .hero-github,
@@ -420,46 +371,6 @@ body {
 .light .hero-github:hover,
 [data-theme="light"] .hero-github:hover {
   color: rgba(139, 26, 26, 0.9);
-}
-
-/* SKILL TAG */
-.skill-tag {
-  display: inline-flex;
-  align-items: center;
-
-  padding: 12px 18px;
-
-  border: 1px solid var(--rule);
-
-  background: rgba(255, 255, 255, 0.02);
-
-  font-size: 14px;
-  line-height: 1;
-
-  letter-spacing: -0.02em;
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-
-  backdrop-filter: blur(4px);
-}
-
-.skill-tag:hover {
-  background: rgba(139, 26, 26, 0.08);
-
-  border-color: rgba(139, 26, 26, 0.28);
-
-  transform: translateY(-2px);
-}
-
-.light .skill-tag {
-  background: rgba(0, 0, 0, 0.015);
-}
-
-.light .skill-tag:hover {
-  background: rgba(139, 26, 26, 0.06);
 }
 
 /* RESPONSIVE SCALE */
@@ -475,5 +386,221 @@ body {
   html,
   body {
     zoom: 0.9;
+  }
+}
+
+/* Animaciones de Motion One */
+
+[data-reveal] {
+  opacity: 0;
+}
+
+[data-reveal-image] {
+  opacity: 0;
+}
+
+[data-reveal-title] {
+  opacity: 0;
+}
+
+/* Animación de líneas de velocidad */
+
+.speed-lines svg {
+  width: 100%;
+  height: 100%;
+}
+
+.speed-line {
+  fill: none;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+
+  animation: drawLine 2.8s ease-out forwards;
+}
+
+.speed-line-1 {
+  stroke: rgba(139, 26, 26, 0.28);
+  stroke-width: 2;
+}
+
+.speed-line-2 {
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1.5;
+
+  animation-delay: 0.25s;
+}
+
+.speed-line-3 {
+  stroke: rgba(139, 26, 26, 0.18);
+  stroke-width: 1.5;
+
+  animation-delay: 0.5s;
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1600;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* ================================= */
+/* HERO LOGO PARALLAX IDLE */
+/* ================================= */
+
+@keyframes heroLogoFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-0.5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes heroLogoShadowFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(5px) translateX(3px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.hero-logo {
+  animation: heroLogoFloat 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-logo-shadow {
+  animation: heroLogoShadowFloat 6s ease-in-out infinite;
+}
+
+/* Soto del BG del Hero */
+@keyframes heroWordFloat {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.hero-bg-word {
+  animation: heroWordFloat 12s ease-in-out infinite alternate;
+}
+
+/* Botón verde de "disponoble para proyectos" */
+@keyframes pulseDot {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.status-dot {
+  animation: pulseDot 2.5s infinite;
+}
+
+/* Animación de los títulos y divisores de ProjectsPreview */
+
+.project-divider {
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+
+  animation: dividerReveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes dividerReveal {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Animación los botones */
+
+.editorial-button {
+  position: relative;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.editorial-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 30px rgba(139, 26, 26, 0.18),
+    0 0 60px rgba(139, 26, 26, 0.08);
+}
+
+/*  Movimiento de las Flechas */
+.editorial-button i {
+  transition: transform 0.35s ease;
+}
+
+.editorial-button:hover i {
+  transform: translateX(8px);
+}
+
+/* Brillo del proyecto */
+.project-glow {
+  animation: glowPulse 8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.45;
   }
 }

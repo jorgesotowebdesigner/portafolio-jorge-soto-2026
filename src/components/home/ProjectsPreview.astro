@@ -21,12 +21,17 @@ const secondary = projects.slice(1, 3);
     <span class="editorial-kicker"> // 02 </span>
 
     <h2
+      data-reveal-title
       class="font-display text-[clamp(58px,7vw,96px)] leading-none tracking-[0.03em] text-[var(--white)]"
     >
       PROYECTOS
     </h2>
 
-    <div class="mb-3 h-px flex-1 bg-[var(--rule)]"></div>
+    <div
+      data-reveal-divider
+      class="project-divider mb-3 h-px flex-1 bg-[rgba(255,255,255,0.18)]"
+    >
+    </div>
   </div>
 
   <!-- Layout -->
@@ -65,7 +70,10 @@ const secondary = projects.slice(1, 3);
                 <span class="editorial-meta">{featured.year}</span>
               </div>
 
-              <h3 class="mb-8 max-w-[560px] font-serif text-[clamp(42px,4vw,72px)] leading-[0.98] tracking-[-0.04em] text-[var(--white)]">
+              <h3
+                data-reveal-title
+                class="mb-8 max-w-[560px] font-serif text-[clamp(42px,4vw,72px)] leading-[0.98] tracking-[-0.04em] text-[var(--white)]"
+              >
                 {featured.title}
               </h3>
 
@@ -121,6 +129,7 @@ const secondary = projects.slice(1, 3);
 
               {/* Screenshot */}
               <img
+                data-reveal-image
                 src={featured.cover}
                 alt={featured.title}
                 class="w-full transition-transform duration-700 group-hover:scale-[1.015]"
@@ -146,7 +155,10 @@ const secondary = projects.slice(1, 3);
                   <span class="editorial-meta text-[10px]">{project.year}</span>
                 </div>
 
-                <h3 class="mb-6 max-w-[420px] font-serif text-[clamp(32px,3vw,52px)] leading-[1.02] tracking-[-0.03em] text-[var(--white)]">
+                <h3
+                  data-reveal-title
+                  class="mb-6 max-w-[420px] font-serif text-[clamp(32px,3vw,52px)] leading-[1.02] tracking-[-0.03em] text-[var(--white)]"
+                >
                   {project.title}
                 </h3>
 
